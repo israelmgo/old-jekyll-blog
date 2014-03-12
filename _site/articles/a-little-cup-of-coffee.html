@@ -1,0 +1,850 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>A little cup of CoffeeScript &#8211; Hao's Thought Works</title>
+<meta name="description" content="">
+<meta name="keywords" content="coffeescript">
+<!-- Twitter Cards -->
+
+	<meta name="twitter:card" content="summary">
+		<meta name="twitter:image" content="/images/weixin_qrcode_12cm.jpg">
+	
+
+<meta name="twitter:title" content="A little cup of CoffeeScript">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@hchen7">
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="blog">
+<meta property="og:image" content="http://coffeescript.org/documentation/images/logo.png">
+<meta property="og:title" content="A little cup of CoffeeScript">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://haoch.me/articles/a-little-cup-of-coffee.html">
+<meta property="og:site_name" content="Hao's Thought Works">
+<!-- Webmaster Tools verfication -->
+
+
+
+
+<link rel="canonical" href="http://haoch.me/articles/a-little-cup-of-coffee.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hao's Thought Works Feed">
+<link rel="author" href="https://plus.google.com/103688232748743092549?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- For all browsers -->
+<link rel="stylesheet" type="text/css" href="/assets/css/main.min.css">
+
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/lato:n3,i3,n4,i4,n7.js" type="text/javascript"></script>
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js" type="text/javascript"></script>
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.9.1.min.js" data-cfasync="false"></script>
+<script data-cfasync="false">window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/images/favicon.png">
+<!-- non-retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57-precomposed.png" sizes="57x57">
+<!-- non-retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-72x72-precomposed.png" sizes="72x72">
+<!-- non-retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-76x76-precomposed.png" sizes="76x76">
+<!-- retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
+<!-- retina iPhone iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+<!-- retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
+<!-- retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-152x152-precomposed.png" sizes="152x152">
+
+</head>
+
+<body id="post" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="site-header">
+	<div class="masthead-wrapper">
+		<header id="masthead" itemscope itemtype="http://schema.org/Organization">
+			<!--
+			<a href="http://haoch.me" class="site-logo" rel="home" title="Hao's Thought Works" itemprop="url">
+				<img src="http://haoch.me/images/site-logo.jpg" width="50" height="50" alt="Hao's Thought Works logo" itemprop="logo">
+			</a>
+			-->
+
+			<span class="site-title">					
+				<a href="http://haoch.me">Hao's Thought Works</a>
+				<span class="bio">Data driving world</span>
+			</span>
+		</header><!-- /.masthead -->
+		<nav role="navigation" id="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://haoch.me/about.html">About</a></li>
+		        
+				<li><a href="http://haoch.me/articles">Articles</a></li>
+		        
+				<li><a href="http://haoch.me/tags">Tags</a></li>
+		        
+				<li><a href="http://haoch.me/links">Links</a></li>
+		        
+                
+		    </ul>
+		</nav>
+	</div><!-- /.entry-wrapper -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="entry-header">
+      <!--
+      <div class="entry-image">
+        
+        
+      </div>
+      -->
+      <!-- /.entry-image -->
+      <h1 class="entry-title" itemprop="name">A little cup of CoffeeScript</h1>
+    </header>
+    <div class="entry-wrapper">
+      <div class="entry-content" itemprop="description">
+        <p>本文并非真正的介绍咖啡或者与咖啡有关的任何东西，而是对coffeescript这门语言的设计哲学，特性以及弊端等做一个简短的介绍。</p>
+
+<h2 id="section">背景</h2>
+
+<p>一直以来JavaScript认为一个浏览器的脚本语言而已，然后随着互联网的发展，前端技术的成熟，富客户端的应用越来越多，而且node js等server 端javascript框架的出现，使得javascript已然成为一种可应用于任何场景的语言，应用开发中JavaScript的开发比重也越来越大，然而JavaScript作为一门古老的语言，长期以来却未有过较大发展，然后其语法本身较为冗余罗嗦，编程过程中，需要书写大量重复代码，而且部分语法语义模糊怪异，模菱两可，很容易无意之间为代码质量留下隐患，同时JavaScript语法本身类c语言，语义性和可读性方面都较为古老，针对这些问题，更为现代的语言如ruby和python中均给出了更为幽雅的解决方案。因此，如果你希望如python或者ruby般幽雅的写javascript，coffeescript会是一个不错的选择。</p>
+
+<hr />
+
+<h2 id="coffee-is-just-javascript">Coffee is just JavaScript</h2>
+
+<p>Coffee Script 并非是JavaScript的超集或者独立于javascript的语言，“Coffee script is just javascript“，更准确的说是javascript的子集，针对javascript的所有特性，取其精华，去其糟粕，进一步融合ruby和python的优秀语法加以适当改写而成。</p>
+
+<p>其主要<strong>优点</strong>在于:</p>
+
+<ul>
+  <li><strong>Coffee Script 是编译的JavaScript</strong>，coffeescript中可以原生使用任何javascript生态系统中前端framework和npm仓库中的package。</li>
+  <li><strong>引入了诸多Ruby和Python的优秀特性</strong>，其中最大的特点之一是以类Python的强制缩进和空白分割语法，取代了大量花括号“｛｝”的使用，使代码层次更为清晰可读。</li>
+  <li><strong>更少代码量</strong>， 经过coffeescript作者统计，使用coffeescript比使用javascript平均可减少三分之一到二分之一的代码量。</li>
+  <li><strong>Javascript的精简子集</strong>，去除了诸多费解的语法，以类自然语言如is，isnt，off，on等代替。</li>
+</ul>
+
+<p>其主要<strong>缺点</strong>在于:</p>
+
+<ul>
+  <li><strong>运行较慢</strong>, 因为coffee运行前需要先通过coffee解析器编译成javascript，然后再通过javascript引擎执行，因此一般而言，部署的时候会预先先将coffee script 编译成javascript。当然随着coffee解析器的进一步优化，运行速度的差距必然越来越小。</li>
+  <li><strong>运行时不方便调试</strong>，除非是coffee解析器解析过程中语法错误，coffeescript运行时报错显示的是javascript的错误栈信息，这样可能不易于很快的定位出错误的地方。</li>
+</ul>
+
+<hr />
+
+<h2 id="coffee-">Coffee 语法</h2>
+
+<h4 id="section-1">1. <strong>强制缩进与空白分割</strong></h4>
+<p>Coffee 语法的主要特点是利用了仿照Python的强制缩进和空白来做代码块分割。</p>
+
+<h4 id="section-2">2. <strong>不使用分号</strong></h4>
+<p>Javascript 中句尾分号可选，但是js引擎运行前是会自动补充上的，在CoffeeScript中强制不允许使用分号。</p>
+
+<h4 id="section-3">3. <strong>注释 #</strong></h4>
+
+<p>类ruby和python的注释“＃”</p>
+
+<ul>
+  <li>单行注释</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="c">#comments</span>
+</code></pre></div>
+
+<ul>
+  <li>多行注释</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="c">###</span>
+<span class="n">comments</span>
+<span class="c">###</span>
+</code></pre></div>
+
+<h4 id="var">4. 变量声明无需var</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;hao&quot;</span>
+</code></pre></div>
+
+<h4 id="function">5. 函数声明无需function</h4>
+
+<ul>
+  <li>无参数函数</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="n">name</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="s">&quot;hao&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="p">()</span><span class="o">-&gt;</span><span class="s">&quot;hao&quot;</span>
+<span class="n">var</span> <span class="n">name</span> <span class="o">=</span> <span class="n">function</span><span class="p">(){</span><span class="k">return</span> <span class="s">&quot;hao&quot;</span><span class="p">;}</span>
+</code></pre></div>
+
+<ul>
+  <li>固定参数函数</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="nb">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="n">var</span> <span class="nb">sum</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;}</span>
+</code></pre></div>
+
+<ul>
+  <li>不固定参数函数</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="nb">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="err">…</span><span class="p">)</span><span class="o">-&gt;</span> 
+	<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">a</span><span class="o">.</span><span class="n">forEach</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">result</span><span class="o">+=</span><span class="n">n</span>
+	<span class="n">result</span>
+</code></pre></div>
+
+<ul>
+  <li>默认值参数函数</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="nb">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</code></pre></div>
+
+<h4 id="section-4">6. <strong>函数调用</strong>,使用小括号是可选的</h4>
+
+<div class="highlight"><pre><code class="python"><span class="nb">sum</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span>
+<span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>扩展函数调用方法（至少传入一个参数）：</p>
+
+<ul>
+  <li>parents()</li>
+  <li>apply()</li>
+  <li>call()</li>
+</ul>
+
+<h4 id="flow-control">7. 流程控制(flow control)</h4>
+
+<ul>
+  <li>
+    <p><strong>-&gt;</strong>: 函数内部上下文，函数域外无效</p>
+  </li>
+  <li>
+    <p><strong>=&gt;</strong>: 本地（local）上下文，可调用函数作用域以外变量</p>
+  </li>
+  <li>
+    <p><strong>if … then … else … then …</strong></p>
+  </li>
+</ul>
+
+<p>后缀式条件判断: <code>it's code if heat &lt; 5</code></p>
+
+<ul>
+  <li>
+    <p><strong>!</strong> &amp; <strong>not</strong></p>
+  </li>
+  <li>
+    <p><strong>unless</strong> &amp; <strong>if not</strong></p>
+  </li>
+  <li>
+    <p><strong>is</strong> &amp; <strong>==</strong></p>
+  </li>
+  <li>
+    <p><strong>isnt</strong> &amp; <strong>!=</strong></p>
+  </li>
+  <li>
+    <p><em>more …</em></p>
+  </li>
+</ul>
+
+<h4 id="section-5">8. 字符串模板</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Chen,Hao&quot;</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span> <span class="s">&quot;&quot;</span>
+</code></pre></div>
+
+<h4 id="section-6">9. 循环和遍历</h4>
+
+<div class="highlight"><pre><code class="python"><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="p">[]</span>
+	
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">index</span> <span class="ow">in</span> <span class="p">[]</span>
+	
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="n">of</span> <span class="p">{}</span>
+	
+<span class="n">__method__</span> <span class="n">num</span> <span class="k">with</span> <span class="n">num</span>  <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="p">[]</span> <span class="n">when</span> <span class="n">__condition__</span>
+</code></pre></div>
+
+<h4 id="section-7">10. 数组声明与访问</h4>
+
+<p>声明</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> 
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span>
+		<span class="mi">2</span>
+		<span class="mi">3</span>
+		<span class="mi">4</span>
+		<span class="mi">5</span>
+	<span class="p">]</span> 
+</code></pre></div>
+
+<p>访问</p>
+
+<ul>
+  <li>单索引访问：<code>arr[0]</code></li>
+  <li>区间访问</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"><span class="n">arr</span><span class="p">[</span><span class="mf">0.</span><span class="o">.</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="o">..</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">aarr</span><span class="p">[</span><span class="o">..</span><span class="p">]</span>
+</code></pre></div>
+
+<h4 id="section-8">11. 特殊操作符</h4>
+
+<ul>
+  <li>
+    <p><strong>@</strong> =&gt; <em>this</em>,常用于类的实例变量或者方法声明中，作为this 关键字的缩写。</p>
+  </li>
+  <li>
+    <p><strong>::</strong> =&gt; <em>prototype</em> ，常用语类的静态变量或者方法申明中，作为prototype关键字的缩写。</p>
+  </li>
+  <li>
+    <p><strong>?</strong>:  存在操作符，若前面返回对象不为<em>null</em>,”“或者undefined的条件下，继续执行，否则返回 <em>undefined</em> 。</p>
+  </li>
+</ul>
+
+<h4 id="section-9">12. 类定义与使用</h4>
+
+<p>关键字：<code>class</code>,<code>@property</code>,<code>@method</code></p>
+
+
+
+       <br /> <small>（转载本站文章请注明作者和出处 <a href="/articles/a-little-cup-of-coffee.html">haoch.me</a>，请勿用于任何商业用途）</small>
+
+        
+        <hr />
+        <div class="entry-meta">
+          <a href="http://haoch.me/about.html"><img src="http://haoch.me/images/bio-photo-200x200.png" alt="Hao photo" class="author-photo" width="30" height="30"></a>
+          <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Published by <span itemprop="name" class="fn"><a href="http://haoch.me/about.html" title="About Hao" itemprop="url">Hao</a></span> on </span>
+          <span class="entry-date date published"><time datetime="2013-09-21T00:00:00+02:00" itemprop="datePublished">September 21, 2013</time></span>
+          
+          <span class="entry-tags">
+              <a href="http://haoch.me/tag/coffeescript" title="coffeescript" class="tag" rel="tag">coffeescript</a>
+          </span>
+            <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style addthis_sharing">
+<a class="addthis_button_sinaweibo"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<!-- AddThis Button END -->
+
+
+        </div><!-- /.entry-meta -->
+      </div><!-- /.entry-content -->
+      
+      <nav class="pagination" role="navigation">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+          
+        
+          
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+          
+          
+        
+          
+          
+        
+          
+          
+            
+          
+        
+        
+          <a href="/articles/site-building.html" class="previous-link" title="Previous article"><i class="icon-chevron-left icon-large"></i> <span>Previous</span></a>
+        
+          <a href="http://haoch.me/articles/" class="archive-link"><i class="icon-list-ul icon-large"></i> <span>Archive</span></a>
+        
+          <a href="/articles/java-string.html" class="next-link" title="Next article"><i class="icon-chevron-right icon-large"></i> <span>Next</span></a>
+        
+    </nav><!-- /.pagination -->
+    <div id="disqus_thread"></div><!-- /#disqus_thread -->
+    <div id="addthis_trendingcontent"></div>
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span class="disclaimer">
+    Proudly built with <a href="http://jekyllrb.com/">Jekyll</a> and  hosted by <a href="http://github.com">Github</a>. <a href="/terms.html">Privacy and Disclosure Policies</a>
+</span>
+
+<div class="social-icons">
+	<a href="http://github.com/haoch" title="Hao on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ihaochen" title="Hao on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://weibo.com/haochencn" title="Hao on Weibo" target="_blank"><i class="icon-weibo icon-2x"></i></a>
+	<a href="http://twitter.com/hchen7" title="Hao on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	<a href="http://facebook.com/haochencn" title="Hao on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>
+	<a href="https://plus.google.com/103688232748743092549" title="Hao on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>
+	<a href="http://instagram.com/haochen90" title="Hao on Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>
+	
+	<a href="http://feeds.feedburner.com/MadeMistakes" title="Atom/RSS feed"><i class="icon-rss icon-2x"></i></a>
+</div>
+
+<!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+<script data-cfasync="false" type="text/javascript" src="/assets/js/main.min.js"></script>
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40551822-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'haoch'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript><div class="upgrade">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></div></noscript>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52aadb5c3b6ff852"></script>
+<script type="text/javascript">
+addthis.layers({
+  'theme' : 'transparent',
+  'domain' : 'haoch.me',
+  /* 'share' : {
+    'position' : 'left',
+    'numPreferredServices' : 6,
+    'offset':{
+      'top':'25%'
+    },
+    'services':'twitter,sinaweibo,facebook,google_plusone_share,email,more'
+  },*/ 
+  'follow' : {
+    'services' : [
+      {'service': 'sinaweibo', 'id': 'Hochn'},
+      {'service': 'twitter', 'id': 'HChen7'},
+      {'service': 'facebook', 'id': 'haochencn'},
+      {'service': 'linkedin', 'id': 'ihaochen'},
+      {'service': 'google_follow', 'id': '103688232748743092549'},
+      {'service': 'rss', 'id': 'http://haoch.me/feed.xml'}
+    ]
+  },  
+  'whatsnext' : {
+      'recommendedTitle' : 'Recommended for you',
+      'shareMsg' : 'Share to [x]',
+      'followMsg' : 'Follow us on [x]',
+      'theme' : 'transparent',
+      'desktop' : true
+  }
+  /*
+  ,  
+  'recommended' : {
+      'title' : 'Recommended for you',
+      'mobile' : true,
+      'desktop' : true,
+      'theme' : 'transparent'
+  } */
+});
+addthis.box("#addthis_trendingcontent", {
+    feed_title : "Popular Articles - 热门文章",
+    feed_type : "trending",
+    feed_period : "month",
+    num_links : 5,
+    height : "auto",
+   width : "auto"});
+</script>
+<!-- AddThis Smart Layers END -->
+<!-- AddThis Welcome BEGIN -->
+<script type='text/javascript'>
+addthis.bar.initialize({'default':{
+	"backgroundColor": "#000000",
+	"buttonColor": "#098DF4",
+	"textColor": "#FFFFFF",
+	"buttonTextColor": "#FFFFFF",
+	"hideAfter": 20
+},rules:[
+	{
+		"name": "Twitter",
+		"match": {
+			"referringService": "twitter"
+		},
+		"message": "If you find this page helpful:",
+		"action": {
+			"type": "button",
+			"text": "Tweet it!",
+			"verb": "share",
+			"service": "twitter"
+		}
+	},
+	{
+		"name": "Facebook",
+		"match": {
+			"referringService": "facebook"
+		},
+		"message": "Tell your friends about us:",
+		"action": {
+			"type": "button",
+			"text": "Share on Facebook",
+			"verb": "share",
+			"service": "facebook"
+		}
+	},
+	{
+		"name": "Google",
+		"match": {
+			"referrer": "google.com"
+		},
+		"message": "If you like this page, let Google know:",
+		"action": {
+			"type": "button",
+			"text": "+1",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "sinaweibo",
+		"match": {
+			"referringService": "sinaweibo"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Sina Weibo",
+			"verb": "share",
+			"service": "sinaweibo"
+		}
+	},
+	{
+		"name": "linkedin",
+		"match": {
+			"referringService": "linkedin"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on LinkedIn",
+			"verb": "share",
+			"service": "linkedin"
+		}
+	},
+	{
+		"name": "baidu",
+		"match": {
+			"referringService": "baidu"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Baidu",
+			"verb": "share",
+			"service": "baidu"
+		}
+	},
+	{
+		"name": "qzone",
+		"match": {
+			"referringService": "qzone"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Qzone",
+			"verb": "share",
+			"service": "qzone"
+		}
+	},
+	{
+		"name": "blogger",
+		"match": {
+			"referringService": "blogger"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Blogger",
+			"verb": "share",
+			"service": "blogger"
+		}
+	},
+	{
+		"name": "digg",
+		"match": {
+			"referringService": "digg"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Digg",
+			"verb": "share",
+			"service": "digg"
+		}
+	},
+	{
+		"name": "google_plusone_share",
+		"match": {
+			"referringService": "google_plusone_share"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Google+ Share",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "email",
+		"match": {
+			"referringService": "email"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Email",
+			"verb": "share",
+			"service": "email"
+		}
+	}
+]});
+</script>
+<!-- AddThis Welcome END -->
+
+</body>
+</html>

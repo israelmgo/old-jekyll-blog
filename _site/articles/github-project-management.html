@@ -1,0 +1,799 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Github 项目管理与开发流程实践 &#8211; Hao's Thought Works</title>
+<meta name="description" content="">
+<meta name="keywords" content="git, github">
+<!-- Twitter Cards -->
+
+	<meta name="twitter:card" content="summary">
+		<meta name="twitter:image" content="/images/weixin_qrcode_12cm.jpg">
+	
+
+<meta name="twitter:title" content="Github 项目管理与开发流程实践">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@hchen7">
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="blog">
+<meta property="og:image" content="http://haoch.me/images/weixin_qrcode_12cm.jpg">
+<meta property="og:title" content="Github 项目管理与开发流程实践">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://haoch.me/articles/github-project-management.html">
+<meta property="og:site_name" content="Hao's Thought Works">
+<!-- Webmaster Tools verfication -->
+
+
+
+
+<link rel="canonical" href="http://haoch.me/articles/github-project-management.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hao's Thought Works Feed">
+<link rel="author" href="https://plus.google.com/103688232748743092549?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- For all browsers -->
+<link rel="stylesheet" type="text/css" href="/assets/css/main.min.css">
+
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/lato:n3,i3,n4,i4,n7.js" type="text/javascript"></script>
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js" type="text/javascript"></script>
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.9.1.min.js" data-cfasync="false"></script>
+<script data-cfasync="false">window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/images/favicon.png">
+<!-- non-retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57-precomposed.png" sizes="57x57">
+<!-- non-retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-72x72-precomposed.png" sizes="72x72">
+<!-- non-retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-76x76-precomposed.png" sizes="76x76">
+<!-- retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
+<!-- retina iPhone iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+<!-- retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
+<!-- retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-152x152-precomposed.png" sizes="152x152">
+
+</head>
+
+<body id="post" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="site-header">
+	<div class="masthead-wrapper">
+		<header id="masthead" itemscope itemtype="http://schema.org/Organization">
+			<!--
+			<a href="http://haoch.me" class="site-logo" rel="home" title="Hao's Thought Works" itemprop="url">
+				<img src="http://haoch.me/images/site-logo.jpg" width="50" height="50" alt="Hao's Thought Works logo" itemprop="logo">
+			</a>
+			-->
+
+			<span class="site-title">					
+				<a href="http://haoch.me">Hao's Thought Works</a>
+				<span class="bio">Data driving world</span>
+			</span>
+		</header><!-- /.masthead -->
+		<nav role="navigation" id="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://haoch.me/about.html">About</a></li>
+		        
+				<li><a href="http://haoch.me/articles">Articles</a></li>
+		        
+				<li><a href="http://haoch.me/tags">Tags</a></li>
+		        
+				<li><a href="http://haoch.me/links">Links</a></li>
+		        
+                
+		    </ul>
+		</nav>
+	</div><!-- /.entry-wrapper -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="entry-header">
+      <!--
+      <div class="entry-image">
+        
+        
+      </div>
+      -->
+      <!-- /.entry-image -->
+      <h1 class="entry-title" itemprop="name">Github 项目管理与开发流程实践</h1>
+    </header>
+    <div class="entry-wrapper">
+      <div class="entry-content" itemprop="description">
+        <p>总所周知，<a href="http://github.com">Github</a>是目前为止体验最好的Git版本控制服务，但是同时提供了非常清晰高效的项目跟踪和管理功能，全球知名的互联网公司如ebay等均购买其企业版本作为内部代码管理之用，对于普通个人开发者和开源项目，Github提供的开放免费或付费服务，也会为开发工作以及项目追踪和管理带来诸多便利。本文将概要记录本人利用github来跟踪和管理个人项目的实践与经验，作为自我总结，也便于日后改进完善。</p>
+
+<h2 id="section">创建项目</h2>
+<p><em>项目名</em>:项目名统一均以字符加“-”组成，英文字母小写</p>
+
+<p><em>项目描述</em>:尽可能加入项目初略描述</p>
+
+<p><em>项目链接</em>: 此处链接一般为wiki链接，或者个人网站中的项目发布页(针对公开发行项目)</p>
+
+<p><em>README</em>: 作为项目的主要说明文档入口，一般会包含以下内容</p>
+
+<ul>
+  <li>项目全名</li>
+  <li>项目描述</li>
+  <li>当前版本以及链接(即tag链接)</li>
+  <li>项目截图（针对应用）</li>
+  <li>使用说明
+    <ul>
+      <li>对于library，会提供maven（java）或者npm（nodejs）等</li>
+      <li>对于应用，会提供安装使用的具体描述</li>
+    </ul>
+  </li>
+  <li>详细文档链接（wiki或者个人站post）</li>
+  <li>支持和讨论链接（支持与讨论主要基于github的issue管理功能）</li>
+</ul>
+
+<h2 id="branch">项目分支（Branch）</h2>
+<p>本文并非git的实践模式说明，具体git操作将在其他文章再予以详细介绍。此处讨论的分支主要用于区分code，doc，snapshot和release，
+此处存在一定争议，对于git的最佳实践而言，编译后的binary文件并不适合放在github中，文档以及编译后的文件应该单独发布，当然这需要一定的额外成本，因此，此处仅鼓励针对独立开发者或者小型项目而言。</p>
+
+<p>初始化情况下，会建立如下分支(branch)：</p>
+
+<ul>
+  <li><strong>master</strong>:主要代码分支，该branch上每次commit的代码最好均有issue与之对应，commit的comment满足以下格式: <code>#{ISSUE_ID}: issue title</code>, 并同时将commit id添加如对应的github issue描述中，使得github页面或者git log中均可对项目issue追踪有个清晰的掌控，每次项目版本完成时，针对版本号创建新的branch: <code>version-{VERSION_NUMBER}</code>以得到该版本的代码的一份snapshot。</li>
+  <li><strong>dev</strong>: 临时工作分支，对于针对具体issue进行开发，完成局部功能点，但尚未全部完成时，代码提交于此，commit的comment尽量需满足#下格式：<code>#{ISSUE_ID}: work log</code>，多人协作时，可通过分不同的brissue<code>#{ISSUE_ID}</code>来管理多个working 分支。</li>
+  <li><strong>doc</strong>:用于存放，截图，帮组文档以及release notes等非代码本身的文件，此部分功能可通过wiki完成，酌情选择</li>
+  <li><strong>snapshot</strong>:该branch一般会删除所有的source code，仅仅编译或打包后的文件，提供对于当前版本的下载。</li>
+  <li><strong>release</strong>:该branch与snapshot分支一样不包含source code，仅存放编译打包后的文件，提供对于不同已正式发布版本的下载。对于更加精细的release，可结合利用branch:<code>release-{VERSION_NUMBER}</code>与tag: <code>{VERSION_NUMBER}</code>,将tag打在对应release的branch上即可。而每次release新的版本最好对应不同的milestone，通过对应的milestone，便可查询出对应版本所解决的issue，根据issue对应的commit号，便可得知落实在代码上的具体修改。</li>
+</ul>
+
+<h2 id="section-1">版本定义</h2>
+<p>对于持续交付和迭代的项目而言，版本号往往代表着产品发布的一系列功能的总体代号和里程碑。因此，设计一套明确有效的版本定义规则具有重要意义。</p>
+
+<p>一般使用的版本发布规则非常简单: <code>N.N.N</code></p>
+
+<ul>
+  <li>版本号最后一位，指代小规模的改进，主要是局部功能上的完善和bug的修复，每次改进自增一位，一般针对某个milestone，也可能包括紧急升级等。</li>
+  <li>版本号第二位，指代较大规模的功能或模块的改进，主要是功能的改进和添加较为重要的新功能，对应着多个milestone：<code>VERSION-N.N.N</code></li>
+  <li>版本号的第三位，指代正式发布成熟产品时使用。</li>
+</ul>
+
+<h2 id="section-2">项目管理与开发</h2>
+<p>项目开发主要利用_master与_dev_两个branch，结合milestone和issue。</p>
+
+<ol>
+  <li>
+    <p>创建__ISSUE__: 首先，制定项目总体scope，设计总体构架，细分功能点，将功能点分散，创建ISSUE.</p>
+  </li>
+  <li>
+    <p>创建__MILESTONE__:创建MILESTONE,版本号命名:<code>VERSION-N.N.N</code>,对已有ISSUE进行优先级排序，将高优先级需求加入MILESTONE中。</p>
+  </li>
+  <li>开发: 
+    <ul>
+      <li>由高到低，选择ISSUE，理解ISSUE需求，</li>
+      <li>git clone/pull 最新代码</li>
+      <li>checkout至<code>dev</code> 分支(针对个人)或者创建新的branch:<code>#{ISSUE_ID}</code>进行设计，编码与测试</li>
+      <li>每次commit均需加入满足规范的comment:<code>#{ISSUE_ID}: working log</code>，</li>
+      <li>等整个ISSUE完成之后，进行code review，</li>
+      <li>然后merge至<code>master</code>分支，并添加comments：<code>#{ISSUE_ID}: issue title</code></li>
+    </ul>
+  </li>
+  <li>关闭ISSUE: ISSUE完成后，完成后关闭ISSUE，此时因为comments中使用了<code>#{ISSUE_ID}</code>，所有与该ISSUE关联的commit以及comments内容均会显示于issue详细页面。 </li>
+  <li>关闭MILESTONE：当MILESTONE中的ISSUE均fix后，关闭MILESTONE</li>
+  <li>版本发布: 根据milestone的版本号，进行项目版本发布:
+    <ul>
+      <li>
+        <p>创建版本相关的branch:</p>
+
+        <pre><code>  git branch release-{VERION_NUMBER}`
+</code></pre>
+      </li>
+      <li>
+        <p>切换至对应版本branch: </p>
+
+        <pre><code>  git checkout release-{VERSION_NUMBER}`
+</code></pre>
+      </li>
+      <li>
+        <p>提交对应branch:</p>
+
+        <pre><code>  git push origin release-{VERSION_NUMBER}`
+</code></pre>
+      </li>
+      <li>
+        <p>创建版本相关tag:</p>
+
+        <pre><code>  git tag {VERSION_NUMBER} -m {ISSUES_TITLE_LIST}`
+</code></pre>
+      </li>
+      <li>
+        <p>提交tag</p>
+
+        <pre><code>  git push origin {VERSION_NUMBER}
+</code></pre>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>值得注意的是</strong>: </p>
+
+<p>统一使用__<code>#{ISSUE_ID}</code>__来描述issue编号，主要有以下几处好处:</p>
+
+<ul>
+  <li>首先，统一ISSUE对应commit的comment规范，是得整个commentlog简单直观，很容易与对应的ISSUE关联</li>
+  <li>此外，github页面中，会自动为<code>#{NUMBER}</code>的文本添加对应编号的ISSUE页面的链接</li>
+  <li>而且，但凡以包含<code>#{NUMBER}</code>并且可关联至ISSUE NUMBER的comments，均会自动回复至github的issue页面中，如 <a href="https://github.com/haoch/haoch.github.io/issues/2">https://github.com/haoch/haoch.github.io/issues/2</a></li>
+</ul>
+
+<p>Git bash:</p>
+
+<p><img src="/images/screenshot/git-log.png" alt="git-log" /></p>
+
+<p>Github commit page:</p>
+
+<p><a href="https://github.com/haoch/haoch.github.io/commits/master"><img src="/images/screenshot/github-commit.png" alt="github-commit" /></a></p>
+
+<p>Github issue page:</p>
+
+<p><a href="https://github.com/haoch/haoch.github.io/issues/2"><img src="/images/screenshot/github-issue.png" alt="github-issue" /></a></p>
+
+<h2 id="section-3">项目发布</h2>
+<p>由于git原则上是不希望将编译后的binary文件添加到repository中，但是对于个人开发者和小型项目的轻量级需求而言，还是可取的，具体步骤如下:</p>
+
+<ul>
+  <li>
+    <p>创建release branch:</p>
+
+    <pre><code>  git branch release
+  git checkout release
+</code></pre>
+  </li>
+  <li>清空除了.git文件夹内以外的所有文件</li>
+  <li>将编译后的打包文件拷贝其中，注意定义清晰的版本与目录或者文件的对应规则</li>
+  <li>
+    <p>添加到repository中</p>
+
+    <pre><code>  git add {PACKAGE_FILE}
+  git commit -am 'RELEASE-{VERSION_NUMBER}'
+</code></pre>
+  </li>
+  <li>提交后，便可将github的raw服务作为cdn使用，又不与source code混杂一团</li>
+</ul>
+
+<p><strong>值得注意的是</strong>:以上方法，对于不同的发布内容，同样可以将github的raw服务作为特定服务使用，比如针对java而言可将其作为maven服务器使用，分发说明上便只需提供maven的repository url，groupid，artifactid以及version即可，而隐藏具体的文件下载细节，具体请阅读：<a href="http://haoch.me/articles/build-maven-repo-on-github.html">基于GITHUB搭建MAVEN仓库</a>一文，当然不只是maven，对于nodejs，ruby等均可基于此定制自己的分发服务。</p>
+
+
+
+       <br /> <small>（转载本站文章请注明作者和出处 <a href="/articles/github-project-management.html">haoch.me</a>，请勿用于任何商业用途）</small>
+
+        
+        <hr />
+        <div class="entry-meta">
+          <a href="http://haoch.me/about.html"><img src="http://haoch.me/images/bio-photo-200x200.png" alt="Hao photo" class="author-photo" width="30" height="30"></a>
+          <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Published by <span itemprop="name" class="fn"><a href="http://haoch.me/about.html" title="About Hao" itemprop="url">Hao</a></span> on </span>
+          <span class="entry-date date published"><time datetime="2014-01-11T00:00:00+01:00" itemprop="datePublished">January 11, 2014</time></span>
+          
+          <span class="entry-tags">
+              <a href="http://haoch.me/tag/git" title="git" class="tag" rel="tag">git</a><a href="http://haoch.me/tag/github" title="github" class="tag" rel="tag">github</a>
+          </span>
+            <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style addthis_sharing">
+<a class="addthis_button_sinaweibo"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<!-- AddThis Button END -->
+
+
+        </div><!-- /.entry-meta -->
+      </div><!-- /.entry-content -->
+      
+      <nav class="pagination" role="navigation">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+          
+          
+        
+          
+          
+        
+          
+          
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+          <a href="/articles/internet-finance.html" class="previous-link" title="Previous article"><i class="icon-chevron-left icon-large"></i> <span>Previous</span></a>
+        
+          <a href="http://haoch.me/articles/" class="archive-link"><i class="icon-list-ul icon-large"></i> <span>Archive</span></a>
+        
+          <a href="/articles/pig-function-tutorial.html" class="next-link" title="Next article"><i class="icon-chevron-right icon-large"></i> <span>Next</span></a>
+        
+    </nav><!-- /.pagination -->
+    <div id="disqus_thread"></div><!-- /#disqus_thread -->
+    <div id="addthis_trendingcontent"></div>
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span class="disclaimer">
+    Proudly built with <a href="http://jekyllrb.com/">Jekyll</a> and  hosted by <a href="http://github.com">Github</a>. <a href="/terms.html">Privacy and Disclosure Policies</a>
+</span>
+
+<div class="social-icons">
+	<a href="http://github.com/haoch" title="Hao on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ihaochen" title="Hao on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://weibo.com/haochencn" title="Hao on Weibo" target="_blank"><i class="icon-weibo icon-2x"></i></a>
+	<a href="http://twitter.com/hchen7" title="Hao on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	<a href="http://facebook.com/haochencn" title="Hao on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>
+	<a href="https://plus.google.com/103688232748743092549" title="Hao on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>
+	<a href="http://instagram.com/haochen90" title="Hao on Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>
+	
+	<a href="http://feeds.feedburner.com/MadeMistakes" title="Atom/RSS feed"><i class="icon-rss icon-2x"></i></a>
+</div>
+
+<!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+<script data-cfasync="false" type="text/javascript" src="/assets/js/main.min.js"></script>
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40551822-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'haoch'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript><div class="upgrade">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></div></noscript>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52aadb5c3b6ff852"></script>
+<script type="text/javascript">
+addthis.layers({
+  'theme' : 'transparent',
+  'domain' : 'haoch.me',
+  /* 'share' : {
+    'position' : 'left',
+    'numPreferredServices' : 6,
+    'offset':{
+      'top':'25%'
+    },
+    'services':'twitter,sinaweibo,facebook,google_plusone_share,email,more'
+  },*/ 
+  'follow' : {
+    'services' : [
+      {'service': 'sinaweibo', 'id': 'Hochn'},
+      {'service': 'twitter', 'id': 'HChen7'},
+      {'service': 'facebook', 'id': 'haochencn'},
+      {'service': 'linkedin', 'id': 'ihaochen'},
+      {'service': 'google_follow', 'id': '103688232748743092549'},
+      {'service': 'rss', 'id': 'http://haoch.me/feed.xml'}
+    ]
+  },  
+  'whatsnext' : {
+      'recommendedTitle' : 'Recommended for you',
+      'shareMsg' : 'Share to [x]',
+      'followMsg' : 'Follow us on [x]',
+      'theme' : 'transparent',
+      'desktop' : true
+  }
+  /*
+  ,  
+  'recommended' : {
+      'title' : 'Recommended for you',
+      'mobile' : true,
+      'desktop' : true,
+      'theme' : 'transparent'
+  } */
+});
+addthis.box("#addthis_trendingcontent", {
+    feed_title : "Popular Articles - 热门文章",
+    feed_type : "trending",
+    feed_period : "month",
+    num_links : 5,
+    height : "auto",
+   width : "auto"});
+</script>
+<!-- AddThis Smart Layers END -->
+<!-- AddThis Welcome BEGIN -->
+<script type='text/javascript'>
+addthis.bar.initialize({'default':{
+	"backgroundColor": "#000000",
+	"buttonColor": "#098DF4",
+	"textColor": "#FFFFFF",
+	"buttonTextColor": "#FFFFFF",
+	"hideAfter": 20
+},rules:[
+	{
+		"name": "Twitter",
+		"match": {
+			"referringService": "twitter"
+		},
+		"message": "If you find this page helpful:",
+		"action": {
+			"type": "button",
+			"text": "Tweet it!",
+			"verb": "share",
+			"service": "twitter"
+		}
+	},
+	{
+		"name": "Facebook",
+		"match": {
+			"referringService": "facebook"
+		},
+		"message": "Tell your friends about us:",
+		"action": {
+			"type": "button",
+			"text": "Share on Facebook",
+			"verb": "share",
+			"service": "facebook"
+		}
+	},
+	{
+		"name": "Google",
+		"match": {
+			"referrer": "google.com"
+		},
+		"message": "If you like this page, let Google know:",
+		"action": {
+			"type": "button",
+			"text": "+1",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "sinaweibo",
+		"match": {
+			"referringService": "sinaweibo"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Sina Weibo",
+			"verb": "share",
+			"service": "sinaweibo"
+		}
+	},
+	{
+		"name": "linkedin",
+		"match": {
+			"referringService": "linkedin"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on LinkedIn",
+			"verb": "share",
+			"service": "linkedin"
+		}
+	},
+	{
+		"name": "baidu",
+		"match": {
+			"referringService": "baidu"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Baidu",
+			"verb": "share",
+			"service": "baidu"
+		}
+	},
+	{
+		"name": "qzone",
+		"match": {
+			"referringService": "qzone"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Qzone",
+			"verb": "share",
+			"service": "qzone"
+		}
+	},
+	{
+		"name": "blogger",
+		"match": {
+			"referringService": "blogger"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Blogger",
+			"verb": "share",
+			"service": "blogger"
+		}
+	},
+	{
+		"name": "digg",
+		"match": {
+			"referringService": "digg"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Digg",
+			"verb": "share",
+			"service": "digg"
+		}
+	},
+	{
+		"name": "google_plusone_share",
+		"match": {
+			"referringService": "google_plusone_share"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Google+ Share",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "email",
+		"match": {
+			"referringService": "email"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Email",
+			"verb": "share",
+			"service": "email"
+		}
+	}
+]});
+</script>
+<!-- AddThis Welcome END -->
+
+</body>
+</html>

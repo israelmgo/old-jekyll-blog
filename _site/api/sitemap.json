@@ -1,0 +1,92 @@
+{
+  "meta":{
+    "url":"http://haoch.me",
+    "title":"Hao's Thought Works",
+    "count":39,
+    "link":"http://haoch.me/api/sitemap.json",
+    "description":"site map links"
+  },
+  "data":[
+    "http://haoch.me",
+    
+     "http://haoch.me/articles/scala-operator.html",
+    
+     "http://haoch.me/articles/scala-named-parameter.html",
+    
+     "http://haoch.me/articles/scala-mixin-composition.html",
+    
+     "http://haoch.me/articles/scala-local-type-inference.html",
+    
+     "http://haoch.me/articles/scala-inner-class.html",
+    
+     "http://haoch.me/articles/scala-lower-type-bound.html",
+    
+     "http://haoch.me/articles/scala-upper-type-bounds.html",
+    
+     "http://haoch.me/articles/scala-traits.html",
+    
+     "http://haoch.me/articles/scala-pattern-matching.html",
+    
+     "http://haoch.me/articles/scala-implicit-parameters.html",
+    
+     "http://haoch.me/articles/scala-higher-order-functions.html",
+    
+     "http://haoch.me/articles/scala-explicitly-typed-self-references.html",
+    
+     "http://haoch.me/articles/scala-currying.html",
+    
+     "http://haoch.me/articles/scala-compound-types.html",
+    
+     "http://haoch.me/articles/scala-anonymouse-function.html",
+    
+     "http://haoch.me/articles/scala-annotations.html",
+    
+     "http://haoch.me/articles/scala-automatic-closures.html",
+    
+     "http://haoch.me/articles/scala-case-classes.html",
+    
+     "http://haoch.me/articles/scala-classes.html",
+    
+     "http://haoch.me/articles/scala-default-parameter-values.html",
+    
+     "http://haoch.me/articles/scala-extractor-objects.html",
+    
+     "http://haoch.me/articles/scala-generic-classes.html",
+    
+     "http://haoch.me/articles/scala-abstract-types.html",
+    
+     "http://haoch.me/articles/scala-for-java-programmer.html",
+    
+     "http://haoch.me/articles/pig-function-tutorial.html",
+    
+     "http://haoch.me/articles/github-project-management.html",
+    
+     "http://haoch.me/articles/internet-finance.html",
+    
+     "http://haoch.me/articles/dive-into-fair-scheduler.html",
+    
+     "http://haoch.me/articles/netflix-genie.html",
+    
+     "http://haoch.me/articles/ruby-with-rvm.html",
+    
+     "http://haoch.me/articles/practical-pig.html",
+    
+     "http://haoch.me/articles/new-hadoop-committer.html",
+    
+     "http://haoch.me/articles/bash-options.html",
+    
+     "http://haoch.me/articles/slideshow.html",
+    
+     "http://haoch.me/articles/intro-to-cron.html",
+    
+     "http://haoch.me/articles/build-maven-repo-on-github.html",
+    
+     "http://haoch.me/articles/java-string.html",
+    
+     "http://haoch.me/articles/a-little-cup-of-coffee.html",
+    
+     "http://haoch.me/articles/site-building.html",
+    
+    null
+  ]
+}

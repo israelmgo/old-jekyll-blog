@@ -1,0 +1,1066 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Java程序员的Scala指南 &#8211; Hao's Thought Works</title>
+<meta name="description" content="">
+<meta name="keywords" content="scala, java">
+<!-- Twitter Cards -->
+
+	
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:image" content="http://haoch.me/images//images/scala-spiral.png"/>
+		
+
+<meta name="twitter:title" content="Java程序员的Scala指南">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@hchen7">
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="blog">
+<meta property="og:image" content="http://haoch.me/images//images/scala-spiral.png">
+<meta property="og:title" content="Java程序员的Scala指南">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://haoch.me/articles/scala-for-java-programmer.html">
+<meta property="og:site_name" content="Hao's Thought Works">
+<!-- Webmaster Tools verfication -->
+
+
+
+
+<link rel="canonical" href="http://haoch.me/articles/scala-for-java-programmer.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hao's Thought Works Feed">
+<link rel="author" href="https://plus.google.com/103688232748743092549?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- For all browsers -->
+<link rel="stylesheet" type="text/css" href="/assets/css/main.min.css">
+
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/lato:n3,i3,n4,i4,n7.js" type="text/javascript"></script>
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js" type="text/javascript"></script>
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.9.1.min.js" data-cfasync="false"></script>
+<script data-cfasync="false">window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/images/favicon.png">
+<!-- non-retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57-precomposed.png" sizes="57x57">
+<!-- non-retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-72x72-precomposed.png" sizes="72x72">
+<!-- non-retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-76x76-precomposed.png" sizes="76x76">
+<!-- retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
+<!-- retina iPhone iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+<!-- retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
+<!-- retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-152x152-precomposed.png" sizes="152x152">
+
+</head>
+
+<body id="post" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="site-header">
+	<div class="masthead-wrapper">
+		<header id="masthead" itemscope itemtype="http://schema.org/Organization">
+			<!--
+			<a href="http://haoch.me" class="site-logo" rel="home" title="Hao's Thought Works" itemprop="url">
+				<img src="http://haoch.me/images/site-logo.jpg" width="50" height="50" alt="Hao's Thought Works logo" itemprop="logo">
+			</a>
+			-->
+
+			<span class="site-title">					
+				<a href="http://haoch.me">Hao's Thought Works</a>
+				<span class="bio">Data driving world</span>
+			</span>
+		</header><!-- /.masthead -->
+		<nav role="navigation" id="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://haoch.me/about.html">About</a></li>
+		        
+				<li><a href="http://haoch.me/articles">Articles</a></li>
+		        
+				<li><a href="http://haoch.me/tags">Tags</a></li>
+		        
+				<li><a href="http://haoch.me/links">Links</a></li>
+		        
+                
+		    </ul>
+		</nav>
+	</div><!-- /.entry-wrapper -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="entry-header">
+      <!--
+      <div class="entry-image">
+        <img src="http://haoch.me/images//images/scala-spiral.png" class="entry-feature-image" alt="Java程序员的Scala指南" itemprop="image">
+        
+      </div>
+      -->
+      <!-- /.entry-image -->
+      <h1 class="entry-title" itemprop="name">Java程序员的Scala指南</h1>
+    </header>
+    <div class="entry-wrapper">
+      <div class="entry-content" itemprop="description">
+        <p>作者：Michel Schinz and Philipp Haller 译者：<a href="http://haoch.me">陈浩</a></p>
+
+<h2 id="section">介绍</h2>
+
+<p>本文档是对Scala语言及其编译器的一个快速介绍。目标读者是已经有一定编程经验，并希望大概了解一下Scala可以用来做什么。本文默认读者已具备面向对象尤其是Java的基础知识。</p>
+
+<h3 id="section-1">第一个示例</h3>
+
+<p>作为第一个例子，我们将使用<em>Hello World</em>程序。
+也许它并不是非常吸引人的，但是可以很容易在不需要对这门语言太多了解的情况下展示Scala工具的用法。内容如下：</p>
+
+<pre><code>object HelloWorld {
+  def main(args: Array[String]) {
+    println("Hello, world!")
+  }
+}
+</code></pre>
+
+<p>对于Java程序员，这个结构应该非常熟悉：它由一个叫<code>main</code>的方法组成，以命令行参数，即一个字符串数组，作为参量；这个方法的主体是对预定义方法<code>println</code>的单一调用，并以友好的问候作为参数。这个<code>main</code>方法不返回值(它是一个过程方法)，因此，没必要申明返回类型。</p>
+
+<p>对于Java程序员，不熟悉的是包含<code>main</code>方法的<code>object</code>的声明。这种声明方式，通常称之为<em>单例对象</em>，是指只有单一实例的类。以上声明了一个名为<code>HelloWorld</code>的类以及这个类的一个实例，同样叫<code>HelloWorld</code>，这个实例需要时才会创建，即第一次被使用的时候。</p>
+
+<p>机敏的读者也许注意到这里<code>main</code>方法没有声明为<code>static</code>。因为Scala中不存在静态成员（方法或者字段）。与其定义静态成员，Scala程序员会在单例对象中定义他们。</p>
+
+<h3 id="section-2">编译示例</h3>
+
+<p>我们利用<code>scalac</code>，即Scala编译器，来编译这个例子。<code>scalac</code>工作原理与大多数编译器类似：它以一个源文件作为参数，可能带有一些选项，然后生成一个或者多个对象文件。这些生成的对象文件是标准的Java class文件。</p>
+
+<p>如果我们将上述程序保存到一个叫<code>HelloWorld.scala</code>的文件中，我们便能通过输入以下命令编译它（这个大于符号<code>&gt;</code>表示命令行提示，不要输入）：</p>
+
+<pre><code>&gt; scalac HelloWorld.scala
+</code></pre>
+
+<p>这个命令会当前目录中生成一些class文件。其中有一个叫<code>HelloWorld.class</code>，它包含了能够直接使用<code>scala</code>命令执行的类，如下文所述。</p>
+
+<h3 id="section-3">运行示例</h3>
+
+<p>一旦被编译，Scala程序就可以通过<code>scala</code>命令运行。
+它的用法与<code>java</code>命令用来运行java程序非常类似，并接受相同的选项。以上示例能够利用以下命令执行，并产生预期输出：</p>
+
+<pre><code>&gt; scala -classpath . HelloWorld
+
+Hello, world!
+</code></pre>
+
+<h2 id="java">与Java交互</h2>
+
+<p>Scala的优势之一是易于与Java代码交互。所有<code>java.lang</code>包下面的类默认被引入，其他的则需要显式引入。</p>
+
+<p>让我们来看一个例子展示这一点。我们希望根据特定国家，比如法国，的惯例获取并格式化当前日期。（其他地区比如瑞士的法语区遵循相同的惯例。）</p>
+
+<p>Java的类库定义了许多强大的工具类，如Date和DateFormat。因为Scala可以与Java无缝交互，所以没必要在Scala类库中实现相同的类–我们可以简单地引入对应Java包的类：</p>
+
+<pre><code>import java.util.{Date, Locale}
+import java.text.DateFormat
+import java.text.DateFormat._
+
+object FrenchDate {
+  def main(args: Array[String]) {
+    val now = new Date
+    val df = getDateInstance(LONG, Locale.FRANCE)
+    println(df format now)
+  }
+}
+</code></pre>
+
+<p>Scala的引入语句与Java的看起来非常相似，然而，它更加强大。
+同一个包的多个类可以通过将他们放的花括号中同时引入，就像第一行。另一个不同在于引入一个包或者class的所有成员时，应该使用下划线字符（<code>_</code>）而非星号（<code>*</code>）。因为星号是一个合法的Scala标识符（如方法名），我们将稍后提到。</p>
+
+<p>第三行的引入语句引入了<code>DateFormat</code>类的所有成员，这使得静态方法<code>getDateInstance</code>和静态字段<code>LONG</code>直接可见。</p>
+
+<p>在<code>main</code>方法中，我们首先创建一个Java的<code>Date</code>类实例，它默认包含当前日期。然后，我们通过前面引入的静态方法<code>getDateInstance</code>定义一个日期格式。最后，我们将根据对应区域的<code>DateFormat</code>的实例格式化后的当前日期打印出来。最后一行显示Scala语法的一个有趣的属性。接受一个参数的方法能够以中缀语法使用。表达式如下</p>
+
+<pre><code>df format now
+</code></pre>
+
+<p>仅仅是以下表达式略微精简的另一种写法</p>
+
+<pre><code>df.format(now)
+</code></pre>
+
+<p>这似乎是一个微不足道的语法细节，但是具有重要的影响，其中之一将在下节探讨。</p>
+
+<p>结束关于Java交互的这一节之前，值得注意的是在Scala中也可以直接继承Java类和实现Java接口。</p>
+
+<h2 id="section-4">一切都是对象</h2>
+
+<p>Scala是一门纯面向对象的语言，因为<em>一切</em>都是对象，包括数字或者函数。它与Java有所不同，Java区分原始类型（例如<code>boolean</code>和<code>int</code>）和引用类型，而且不能够将函数当为值来操作。</p>
+
+<h2 id="section-5">数字是对象</h2>
+
+<p>因为数字是对象，所以它们也有方法。而且事实上，如下这样一个算术表达式：</p>
+
+<pre><code>1 + 2 * 3 / x
+</code></pre>
+
+<p>专门由方法调用组成，因为它等价于下面的表达式，正如上节所述：</p>
+
+<pre><code>(1).+(((2).*(3))./(x))
+</code></pre>
+
+<p>这也意味着<code>+</code>，<code>*</code>等在Scala中均是合法的标识符。</p>
+
+<p>第二版本中数字周围的圆括号是必须的，因为Scala的词法分析器采用最长匹配规则来处理分词。因此，以下表达式：</p>
+
+<pre><code>1.+(2)
+</code></pre>
+
+<p>将被拆分成单词<code>1.</code>, <code>+</code>和 <code>2</code>。选择这种分词方式的原因在于<code>1.</code>相对与<code>1</code>是一个更长的合法匹配。单词<code>1.</code>被解析成了文本<code>1.0</code>，进而变成一个<code>Double</code>而非<code>Int</code>。像这样写这个表达式：</p>
+
+<pre><code>(1).+(2)
+</code></pre>
+
+<p>可避免<code>1</code>被解析成<code>Double</code>。</p>
+
+<h3 id="section-6">函数是对象</h3>
+
+<p>也许对于Java程序员，更惊讶的是Scala中函数也是对象。这因此使得将函数作为参数传递，以变量存储，以及从其他函数中返回，成为了可能。这种将函数当作值操作的能力是一个非常有趣的被称之为<code>函数式编程(functional programming)</code>的编程范式的基础之一。</p>
+
+<p>我们以一个非常简单的用于在每秒执行某个行为的定时器函数为例，说明为什么将函数作为值使用是有用的。
+我们如何传递给它这个行为以执行呢？非常合乎逻辑的是作为一个函数。这类非常简单的函数传递对于许多程序员而言应该很熟悉：经常被用于用户接口代码，用来注册当某些事件发生时被调用的回调函数，。</p>
+
+<p>在下面的程序中，这个计时器函数叫做<code>oncePerSecond</code>，它以一个回调函数作为参数。这个函数的类型写作<code>() =&gt; Unit</code>，指所有无需参数并且不返回任何值的函数的类型（类型<code>Unit</code>类似于C/C++中的<code>void</code>）。这个程序的主函数简单调用这个计时器函数，并传入在终端中打印一句话的回调函数。换言之，这个程序不断地每秒打印一次这句”time flies like an arrow”（光阴似箭）。</p>
+
+<pre><code>object Timmer {
+	def oncePerSecond(callback:() =&gt; Unit) {
+		while(true) { callback();Thread sleep 1000 }
+	}
+	def timeFlies(){
+		println("time flies like an arrow...")
+	}
+	def main(args: Array[String]){
+		oncePerSecond(timeFlies)
+	}
+}	
+</code></pre>
+
+<p>注意为了打印这个字符串，我们使用了预定义的方法<code>println</code>而非<code>System.out</code>中的那个。</p>
+
+<h4 id="section-7">匿名函数</h4>
+
+<p>虽然这个程序已经非常易于理解，但依然可略微优化一下。
+首先，注意函数<code>timeFlies</code>仅仅是为了后面传给<code>oncePerSecond</code>函数而定义。对只被使用一次的函数命名也许并非必要的，事实上，能够仅仅在被传入<code>oncePerSecond</code>时构造这个函数会更好。Scala中，使用<em>匿名函数</em>可以做到这点，准确来讲：没有名字的函数。修订版本的计时器程序的采用匿名函数代替<em>timeFlies</em>，如下：</p>
+
+<pre><code>object TimerAnonymous {
+  def oncePerSecond(callback: () =&gt; Unit) {
+    while (true) { callback(); Thread sleep 1000 }
+  }
+  def main(args: Array[String]) {
+    oncePerSecond(() =&gt;
+      println("time flies like an arrow..."))
+  }
+}
+</code></pre>
+
+<p>这个例子中匿名函数是通过右箭头<code>=&gt;</code>声明的，将函数的参数列表与主体分离。在这个例子中，由箭头左侧那对空的圆括号可见，参数列表为空。函数的主体与上面的<code>timeFlies</code>相同。</p>
+
+<h2 id="section-8">类</h2>
+
+<p>如我们上述所见，Scala是一门面向对象语言，它同样有类的概念。（为了完整性，应该注意到有些面向对象语言没有类的概念，但Scala不是其中之一）
+Scala中的类采用近似Java语法的方式声明。一个重要的不同点在于Scala中的类允许有参数，由下面这个复数的定义可见。</p>
+
+<pre><code>class Complex(real: Double, imaginary: Double) {
+  def re() = real
+  def im() = imaginary
+}
+</code></pre>
+
+<p>这个复数类有两个参数，即复数的实数和虚数部分。这些参数必须在创建<code>Complex</code>类的实例时传递，比如：<code>new Complex(1.5,2.3)</code>。这个类包含两个方法，名为<code>re</code>和<code>im</code>，提供对这两部分的访问。</p>
+
+<p>应该注意到这两个方法的返回类型没有显式给出。编译器会自动推测，它会看这些方法的右侧并推测出都返回一个<code>Doube</code>类型的值。</p>
+
+<p>编译器并不是总能够像这样推测出类型，而且不幸的是也没有简单的规则可以准确的知道，什么时候能什么时候不能。事实上，这通常并不是问题，因为当不能推测出没有显式指定的类型时，编译器会发出警告。有一个简单的规则，Scala的初学者应该尝试省略似乎易于从上下文中推断出来的类型声明，并且看是否编译器认可。一段时间后，这个程序员应该会对何时省略类型何时显式指定类型有一个好的理解。</p>
+
+<h3 id="section-9">无参方法</h3>
+
+<p>方法<code>re</code>和<code>im</code>存在一个小问题，为了调用他们，必须将一对空的圆括号紧跟在他们名字后面，如下面这个例子：</p>
+
+<pre><code>object ComplexNumbers {
+  def main(args: Array[String]) {
+    val c = new Complex(1.2, 3.4)
+    println("imaginary part: " + c.im())
+  }
+}
+</code></pre>
+
+<p>如果能够像他们是字段一样，访问实数和虚数部分，而无需加上这对空的圆括号将会更好。这在Scala中完全可行的，只需简单地将它们定义为<em>无参数</em>方法即可。这类方法不同于有零个参数的方法，他们名字后面不需要圆括号，无论是定义还是使用。我们的<code>Complex</code>类可以像下面这样重写：</p>
+
+<pre><code>class Complex(real: Double, imaginary: Double) {
+  def re = real
+  def im = imaginary
+}
+</code></pre>
+
+<h3 id="section-10">继承和重载</h3>
+
+<p>Scala中所有的类都继承至一个父类。当没有指定父类时，如上一节的<code>Complex</code>例子，隐式默认使用<code>scala.AnyRef</code>。</p>
+
+<p>Scala中可以重载继承至父类的方法。然而强制需要使用<code>override</code>修饰符显式指定一个方法重载了另一个，以免意外重载。例如，我们的<code>Complex</code>类可以通过重定义继承至<code>Object</code>的<code>toString</code>方法来扩展。</p>
+
+<pre><code>class Complex(real: Double, imaginary: Double) {
+  def re = real
+  def im = imaginary
+  override def toString() =
+    "" + re + (if (im &lt; 0) "" else "+") + im + "i"
+}
+</code></pre>
+
+<h2 id="section-11">实例类和模式匹配</h2>
+
+<p>有一种经常在程序中出现的数据结构是树。例如，解析器和编译器经常在程序内部表示树；XML文档是树；而且很多类型的容器是基于树，如红黑树。</p>
+
+<p>我们现在将通过一个计算器的小程序来检测在Scala中这些树如何表示和操作。这个程序的目的是操作由和，整数常数和变量组成的非常小的代数表达式。这类表达式的两个例子是：<code>1+2</code>和<code>(x+x)+(7+y)</code>。</p>
+
+<p>首先，我们需要决定这些表达式的表示方法。最自然的便可想到树，节点代表操作（这里是指加法）而叶子代表值（这里是指常数和变量）。</p>
+
+<p>Java中，这样一个树会用树的抽象父类，以及节点或者叶子各自一个具体的子类来表示。在函数式语言中，则会用一个代数数据类型来达到相同的目的。Scala提供<em>实例类</em>的概念，某种程度上介于两者之间。以下便是我们的例子中如何利用他们来定义树的类型：</p>
+
+<pre><code>abstract class Tree
+case class Sum(l: Tree, r: Tree) extends Tree
+case class Var(n: String) extends Tree
+case class Const(v: Int) extends Tree
+</code></pre>
+
+<p>这些类<code>Sum</code>，<code>Var</code>和<code>Const</code>被声明为实例类，意味着他们与标准类存在着许多方面的区别：</p>
+
+<ul>
+  <li>创建这些类的实例不需要强制使用<code>new</code>关键字（即，可以写作<code>Const(5)</code>，而非<code>new Const(5)</code>），</li>
+  <li>构造器参数的getter函数自动定义（即，可以通过<code>c.v</code>获取<code>Const</code>类的某个实例<code>c</code>的构造器参数<code>v</code>的值），</li>
+  <li>方法<code>equals</code>和<code>hasCode</code>默认提供定义，作用于实例的<em>结构</em>而非他们本身。</li>
+  <li>方法<code>toString</code>默认提供定义，并且以<code>源格式</code>打印其值（如，表达式<code>x+1</code>的树结构可打印为<code>Sum(Var(x),Const(1))</code>）</li>
+  <li>这些类的实例能通过<em>模式匹配(pattern-matching)</em>分解，正如后面将要看到的.</li>
+</ul>
+
+<p>至此我们已经定义了表示我们的代数表达式的数据类型，我们能够开始定义操作来控制他们。我们将从一个在某<code>环境(environment)</code>下计算一个表达式的函数开始。这个环境的目的是指定变量的值。例如，表达式<code>x+1</code>在一个将<code>5</code>和<code>x</code>关联，写作<code>{ x -&gt; 5 }</code>，的环境下结果为<code>6</code>。</p>
+
+<p>因此我们必须找到一个方式表示环境。我们当然可以使用一些关联的数据结构，比如散列表（hash table）。但是我们也能直接的使用函数！一个环境真的仅仅只不过是一个函数而已，它将一个值与一个（变量）名称关联。上面提到的环境<code>{ x -&gt; 5 }</code>在Scala 中可以简单的写成：</p>
+
+<pre><code>{ case "x" =&gt; 5 }
+</code></pre>
+
+<p>这个语句定义了一个函数，当传入字符串<code>"x"</code>作为参数时，它返回整数<code>5</code>，否则失败并抛出一个异常。</p>
+
+<p>在写这个计算函数之前，让我们给这个环境的类型命个名。当然我们总能够使用<code>String =&gt; Int</code>作为环境的类型，但是如果我们为这个类型引入一个名称，程序将得以简化，后续修改也变得更加容易。Scala中可通过以下语句实现：</p>
+
+<pre><code>type Environment = String =&gt; Int
+</code></pre>
+
+<p>此后，这个<code>Environment</code>类型可用作从<code>String</code>到<code>Int</code>的函数类型的一个别名。</p>
+
+<p>我们现在可以给出这个计算函数的定义了。
+从概念上来讲，非常简单：两个表达式的和的值就是两个表达式的值的和；一个变量的值直接从环境获得；一个常数的值就是常数本身。在Scala中表达这些并不更难：</p>
+
+<pre><code>def eval(t: Tree, env: Environment): Int = t match {
+  case Sum(l, r) =&gt; eval(l, env) + eval(r, env)
+  case Var(n)    =&gt; env(n)
+  case Const(v)  =&gt; v
+}
+</code></pre>
+
+<p>这个计算函数通过在树<code>t</code>上执行<em>模式匹配（pattern matching）</em>来实现功能。直观地来讲，以上定义应该相当清楚：</p>
+
+<ol>
+  <li>首先，检查这个树<code>t</code>是否是一个<code>Sum</code>，如果是，则将左边子树绑定至一个新的名为<code>l</code>的变量，而右边子树至一个名为<code>r</code>的变量，然后利用箭头后的表达式的计算来处理；这个表达式能够（并且确实）使用了箭头左侧的模式所约定的变量，即，<code>l</code>和<code>r</code>，</li>
+  <li>如果第一次检查不成功，也就是，如果树不是一个<code>Sum</code>，将继续检查<code>t</code>是否是一个<code>Var</code>；如果是，则将<code>Var</code>节点中的名称绑定至一个变量<code>n</code>，然后采用右边表达式处理，</li>
+  <li>如果到第二次检查也失败了，也就是，如果<code>t</code>不是一个<code>Sum</code>也不是一个<code>Var</code>，将检查是否是一个<code>Const</code>，如果是，则将<code>Const</code>节点中的值绑定至一个变量<code>v</code>并利用右边处理，</li>
+  <li>最后，如果所有检查失败，将抛出一个异常，标志着这个模式匹配表达式失败；这里仅可能在更多<code>Tree</code>的子类被声明的情况下。	</li>
+</ol>
+
+<p>我们看到模式匹配的基本思想是企图在一系列的模式中匹配一个值，并且只要某一个模式匹配上，便提取并命名这个值的各个部分，然后最终执行某些代码，典型的代码是调用这些被命名的部分。</p>
+
+<p>经验丰富的面向对象程序员也许想知道为何我们不定义<code>eval</code>作为<code>Tree</code>类及其子类的一个<em>方法（method）</em>。事实上，我们也可以这么做，因为Scala允许在实例类中定义方法，就像普通类一样。决定使用模式匹配还是方法，因此虽然可能只是一个喜好的问题，但是在扩展性上具有重要涵义：</p>
+
+<ul>
+  <li>当使用方法时，像这样增加一个新类型的节点很容易，只需要为之定义一个<code>Tree</code>的子类；否则，增加一个新的操作来操控这个树会非常繁琐，因为需要修改<code>Tree</code>的所有子类，</li>
+  <li>当使用模式匹配时，情况便逆转了：增加一个新类型的节点需要修改树中所有的执行模式匹配的函数，以将新的节点考虑进来；否则，增加一个新的操作很容易，只需要定义一个独立的函数。</li>
+</ul>
+
+<p>为了进一步探讨模式匹配，让我们定义另一个代数表达式的操作：符号求导（symbolic derivation）。读者可能记得这个操作的下述规则：</p>
+
+<ol>
+  <li>和的导数是导数的和</li>
+  <li>某个变量<code>v</code>的导数在<code>v</code>是与求导过程相关的变量时为1，否则为0</li>
+  <li>常数的导数为0.</li>
+</ol>
+
+<p>这些规则几乎可以逐字翻译为Scala代码，得到的定义如下：</p>
+
+<pre><code>def derive(t: Tree, v: String): Tree = t match {
+  case Sum(l, r) =&gt; Sum(derive(l, v), derive(r, v))
+  case Var(n) if (v == n) =&gt; Const(1)
+  case _ =&gt; Const(0)
+}
+</code></pre>
+
+<p>这个函数介绍了模式匹配的两个新的概念。首先，变量的<code>case</code>表达式有一层<em>保护（guard）</em>，即<code>if</code>关键字之后的那个表达式。这层保护可以阻止除非这个表达式为真的情况下成功地模式匹配。我们这里是用来确保只有被求导的变量名与派生变量<code>v</code>相同的情况下，才返回常数<code>1</code>。这里用到的第二个模式匹配的新特性是<em>通配符(wildcard)</em>，写作<code>_</code>，这个模式可以匹配任何值，不需要指定名称。</p>
+
+<p>虽然我们还没有探索完模式匹配的所有功能，但是为了控制篇幅，我们就此浅尝则止。我们依然想了解一下以上两个函数在实例中表现如何。为了这个目的，让我们写一个简单的<code>main</code>函数，根据表达式<code>(x+x)+(7+y)</code>执行这几步操作：首先计算它在<code>{ x -&gt; 5, y -&gt; 7 }</code>的环境下的值，然后分别计算对<code>x</code>和<code>y</code>的导数。</p>
+
+<pre><code>def main(args: Array[String]) {
+  val exp: Tree = Sum(Sum(Var("x"),Var("x")),Sum(Const(7),Var("y")))
+  val env: Environment = { case "x" =&gt; 5 case "y" =&gt; 7 }
+  println("Expression: " + exp)
+  println("Evaluation with x=5, y=7: " + eval(exp, env))
+  println("Derivative relative to x:\n " + derive(exp, "x"))
+  println("Derivative relative to y:\n " + derive(exp, "y"))
+}
+</code></pre>
+
+<p>执行这个程序，我们得到这些期望的输出：</p>
+
+<pre><code>Expression: Sum(Sum(Var(x),Var(x)),Sum(Const(7),Var(y)))
+Evaluation with x=5, y=7: 24
+Derivative relative to x:
+ Sum(Sum(Const(1),Const(1)),Sum(Const(0),Const(0)))
+Derivative relative to y:
+ Sum(Sum(Const(0),Const(0)),Sum(Const(0),Const(1)))
+</code></pre>
+
+<p>通过测试这个输出，我们看到导数结果应该在呈现给用户之前简化一下。
+使用模式匹配定义一个基本的简化函数是个有趣的（但是极其微妙的）的问题，
+留给读者作为练习。</p>
+
+<h2 id="section-12">特性</h2>
+
+<p>除了从父类继承代码之外，Scala类也从一个或者多个<em>特性（Traits）</em>引入代码。</p>
+
+<p>也许对于Java程序员而言，理解<em>特性</em>是什么最简单的方式是将它们看作能够包含代码的接口。
+Scala中，当一个类继承一个特性时，它实现这个特新的接口，同时继承这个特新包含的所有代码。</p>
+
+<p>为了展示特性的有用之处，我们看一个经典的例子：有序对象。能够在给定类的对象之间进行比较是通常是很有用的，比如对他们进行排序。Java中，可比较的对象继承接口<code>Comparable</code>。Scala中，我们能够比Java中做得稍微好点，将等价的<code>Comparable</code>定义为特性，称为<code>Ord</code>。</p>
+
+<p>比较对象的时候，六个不同的谓语是有用的：小于，小于或等于，等于，不等于，大于或等于，以及大于。然而，将它们全部定义一遍属于下策，特别是这六个中的四个可以用剩下的两个来表示。也就是给出等于和小于（假设），其他的都可以表示。Scala中，所有这些观察结果均可以通过以下trait的声明涵盖：</p>
+
+<pre><code>trait Ord {
+  def &lt; (that: Any): Boolean
+  def &lt;=(that: Any): Boolean =  (this &lt; that) || (this == that)
+  def &gt; (that: Any): Boolean = !(this &lt;= that)
+  def &gt;=(that: Any): Boolean = !(this &lt; that)
+}	
+</code></pre>
+
+<p>抽象来讲，这个定义创建了一个叫<code>Ord</code>的新类型，担任与Java的<code>Comparable</code>相同的角色，同时根据第四个默认定义了其他三个谓语。等于和不等于的谓语这里并没出现，因为他们默认包含在所有对象中。</p>
+
+<p>上面用到的类型<code>Any</code>是Scala中所有其他类型的父类型。可看作比Java的<code>Object</code>类型更泛化的版本，因为它也是基础类型比如<code>Int</code>，<code>Float</code>等的父类型。</p>
+
+<p>为了使得一个类的对象是可比的，定义检测等于和不等于的谓语，然后和上述<code>Ord</code>类混合就可以充分满足。我们以定义一个<code>Date</code>类表示格列高利历（阳历）为例。这样的日期由日，月和年组成，我们都用整数表示。因此我们像下面这样定义这个<code>Date</code>类：</p>
+
+<pre><code>class Date(y: Int, m: Int, d: Int) extends Ord {
+  def year = y
+  def month = m
+  def day = d
+  override def toString(): String = year + "-" + month + "-" + day
+</code></pre>
+
+<p>这里的重要部分是类名和参数之后<code>extends Ord</code>的声明，它声明了<code>Date</code>类继承至<code>Ord</code>特性。</p>
+
+<p>接下来，我们重新定义继承至<code>Object</code>的<code>equals</code>方法，以便可以通过比较各个字段来正确地比较日期。<code>equals</code>的默认实现是不可用的，因为Java中它比较对象本身。我们的定义是：</p>
+
+<pre><code>override def equals(that: Any): Boolean =
+  that.isInstanceOf[Date] &amp;&amp; {
+    val o = that.asInstanceOf[Date]
+    o.day == day &amp;&amp; o.month == month &amp;&amp; o.year == year
+  }
+</code></pre>
+
+<p>这个方法利用了预定义的<code>isInstanceOf</code>和<code>asInstanceOf</code>方法。第一个，<code>isInstanceOf</code>，对应Java的<code>instanceOf</code>操作，并在当且仅当它所应用的对象是给出类型的实例才返回真。第二个，<code>asInstanceOf</code>，对应Java的转换操作：如果对象是给出类型的实例，则当作这个类型看待，否则抛出<code>ClassCastException</code>。</p>
+
+<p>最后，要定义的最后一个方法是检测小于的谓语，如下。用到了另一个预定义的方法<code>error</code>，它抛出给定错误消息的异常。</p>
+
+<pre><code>def &lt;(that: Any): Boolean = {
+  if (!that.isInstanceOf[Date])
+    error("cannot compare " + that + " and a Date")
+
+  val o = that.asInstanceOf[Date]
+  (year &lt; o.year) ||
+  (year == o.year &amp;&amp; (month &lt; o.month ||
+                     (month == o.month &amp;&amp; day &lt; o.day)))
+}
+</code></pre>
+
+<p>这也完成了对<code>Date</code>类的定义。这个类的实例可被视为日期或者可比较对象。此外，它们定义了上面提到的离歌比较谓语：<code>equals</code>和<code>&lt;</code>，因为他们直接出现在<code>Date</code>类和其他的的定义中，因为他们都继承至<code>Ord</code>特性。</p>
+
+<p>当然，特性在其他场景中比这里展示的更加有用，但是深入讨论它们的应用超出了本文的范围。</p>
+
+<h2 id="section-13">泛型</h2>
+
+<p>本指南要探讨的最后一个Scala的特性是<em>范型(Genericity)</em>。Java程序员应该能最为清楚他们的语言中因缺少范型所造成的困难，直到Java 1.5这一缺陷才被完善。</p>
+
+<p>范型是指能够代码中允许以类型作为参数的能力。例如，一个程序员写一个链表的库，会面临一个问题，他需要决定赋予这个链表的元素哪一种类型。因为这个链表打算用于许多不同的上下文场景中，不可能确定元素必须属于的特定类型，假设<code>Int</code>。这完全是随意的而且过于限制的。</p>
+
+<p>Java程序员往往借助于<code>Object</code>，它是所有对象的父类型。然而这种解决方案远不理想，因为对于基本类型（<code>int</code>，<code>long</code>，<code>float</code>等）是无效的，而且意味着程序员必须插入大量的动态类型转换。</p>
+
+<p>Scala能够通过定义范型类（和方法）来解决这个问题。让我们用一个尽可能简单的容器类的例子来测试：一个引用，可以为空或者执行某种类型的一个对象。</p>
+
+<pre><code>class Reference[T] {
+  private var contents: T = _
+  def set(value: T) { contents = value }
+  def get: T = contents
+}
+</code></pre>
+
+<p>这个<code>Reference</code>类以一个类型为参数，称之为<code>T</code>,即元素的类型。这个类型在这个类的主体中用作变量<code>content</code>的类型，<code>set</code>方法的参数以及<code>get</code>函数的返回类型。</p>
+
+<p>上面的代码实例引进了Scala的变量，不需要进一步解释了。然而有趣的是看到赋予那个变量的初始值是<code>_</code>，表示一个默认值。这个默认值对于数值类型为0，对于<code>Boolean</code>类型为<code>false</code>，对于<code>Unit</code>为<code>()</code>,而对于所有对象类型表示<code>null</code>。</p>
+
+<p>为了使用这个<code>Reference</code>类，需要指定这个类型参数<code>T</code>使用哪个类型，也就是单元中容纳元素的类型。例如，为了创建和使用一个容纳整数的单元，我们可以像下面这样写：</p>
+
+<pre><code>object IntegerReference {
+  def main(args: Array[String]) {
+    val cell = new Reference[Int]
+    cell.set(13)
+    println("Reference contains the half of " + (cell.get * 2))
+  }
+}
+</code></pre>
+
+<p>正如这个例子中所看到的，<code>get</code>方法返回的值在用作整数前，不需要转换。同样在这个特别单元中也不可能存储除了整数外的任何东西，因为它已经被声明容纳一个整数。</p>
+
+<h2 id="section-14">总结</h2>
+
+<p>本文档提供了对Scala语言的一个快速的概述，并介绍了一些基本示例。感兴趣的读者可以继续，对于实例，请阅读文档 <em>Scala实例（Scala By Example）</em>，包含更多更高级的例子，如有需要，可参考 <em>Scala语言规范（Scala Language Specification）</em> 。</p>
+
+
+       <br /> <small>（转载本站文章请注明作者和出处 <a href="/articles/scala-for-java-programmer.html">haoch.me</a>，请勿用于任何商业用途）</small>
+
+        
+        <hr />
+        <div class="entry-meta">
+          <a href="http://haoch.me/about.html"><img src="http://haoch.me/images/bio-photo-200x200.png" alt="Hao photo" class="author-photo" width="30" height="30"></a>
+          <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Published by <span itemprop="name" class="fn"><a href="http://haoch.me/about.html" title="About Hao" itemprop="url">Hao</a></span> on </span>
+          <span class="entry-date date published"><time datetime="2014-01-22T00:00:00+01:00" itemprop="datePublished">January 22, 2014</time></span>
+          
+          <span class="entry-tags">
+              <a href="http://haoch.me/tag/scala" title="scala" class="tag" rel="tag">scala</a><a href="http://haoch.me/tag/java" title="java" class="tag" rel="tag">java</a>
+          </span>
+            <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style addthis_sharing">
+<a class="addthis_button_sinaweibo"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<!-- AddThis Button END -->
+
+
+        </div><!-- /.entry-meta -->
+      </div><!-- /.entry-content -->
+      
+      <nav class="pagination" role="navigation">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+          
+          
+        
+          
+          
+        
+          
+          
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+          <a href="/articles/pig-function-tutorial.html" class="previous-link" title="Previous article"><i class="icon-chevron-left icon-large"></i> <span>Previous</span></a>
+        
+          <a href="http://haoch.me/articles/" class="archive-link"><i class="icon-list-ul icon-large"></i> <span>Archive</span></a>
+        
+          <a href="/articles/scala-abstract-types.html" class="next-link" title="Next article"><i class="icon-chevron-right icon-large"></i> <span>Next</span></a>
+        
+    </nav><!-- /.pagination -->
+    <div id="disqus_thread"></div><!-- /#disqus_thread -->
+    <div id="addthis_trendingcontent"></div>
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span class="disclaimer">
+    Proudly built with <a href="http://jekyllrb.com/">Jekyll</a> and  hosted by <a href="http://github.com">Github</a>. <a href="/terms.html">Privacy and Disclosure Policies</a>
+</span>
+
+<div class="social-icons">
+	<a href="http://github.com/haoch" title="Hao on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ihaochen" title="Hao on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://weibo.com/haochencn" title="Hao on Weibo" target="_blank"><i class="icon-weibo icon-2x"></i></a>
+	<a href="http://twitter.com/hchen7" title="Hao on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	<a href="http://facebook.com/haochencn" title="Hao on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>
+	<a href="https://plus.google.com/103688232748743092549" title="Hao on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>
+	<a href="http://instagram.com/haochen90" title="Hao on Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>
+	
+	<a href="http://feeds.feedburner.com/MadeMistakes" title="Atom/RSS feed"><i class="icon-rss icon-2x"></i></a>
+</div>
+
+<!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+<script data-cfasync="false" type="text/javascript" src="/assets/js/main.min.js"></script>
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40551822-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'haoch'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript><div class="upgrade">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></div></noscript>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52aadb5c3b6ff852"></script>
+<script type="text/javascript">
+addthis.layers({
+  'theme' : 'transparent',
+  'domain' : 'haoch.me',
+  /* 'share' : {
+    'position' : 'left',
+    'numPreferredServices' : 6,
+    'offset':{
+      'top':'25%'
+    },
+    'services':'twitter,sinaweibo,facebook,google_plusone_share,email,more'
+  },*/ 
+  'follow' : {
+    'services' : [
+      {'service': 'sinaweibo', 'id': 'Hochn'},
+      {'service': 'twitter', 'id': 'HChen7'},
+      {'service': 'facebook', 'id': 'haochencn'},
+      {'service': 'linkedin', 'id': 'ihaochen'},
+      {'service': 'google_follow', 'id': '103688232748743092549'},
+      {'service': 'rss', 'id': 'http://haoch.me/feed.xml'}
+    ]
+  },  
+  'whatsnext' : {
+      'recommendedTitle' : 'Recommended for you',
+      'shareMsg' : 'Share to [x]',
+      'followMsg' : 'Follow us on [x]',
+      'theme' : 'transparent',
+      'desktop' : true
+  }
+  /*
+  ,  
+  'recommended' : {
+      'title' : 'Recommended for you',
+      'mobile' : true,
+      'desktop' : true,
+      'theme' : 'transparent'
+  } */
+});
+addthis.box("#addthis_trendingcontent", {
+    feed_title : "Popular Articles - 热门文章",
+    feed_type : "trending",
+    feed_period : "month",
+    num_links : 5,
+    height : "auto",
+   width : "auto"});
+</script>
+<!-- AddThis Smart Layers END -->
+<!-- AddThis Welcome BEGIN -->
+<script type='text/javascript'>
+addthis.bar.initialize({'default':{
+	"backgroundColor": "#000000",
+	"buttonColor": "#098DF4",
+	"textColor": "#FFFFFF",
+	"buttonTextColor": "#FFFFFF",
+	"hideAfter": 20
+},rules:[
+	{
+		"name": "Twitter",
+		"match": {
+			"referringService": "twitter"
+		},
+		"message": "If you find this page helpful:",
+		"action": {
+			"type": "button",
+			"text": "Tweet it!",
+			"verb": "share",
+			"service": "twitter"
+		}
+	},
+	{
+		"name": "Facebook",
+		"match": {
+			"referringService": "facebook"
+		},
+		"message": "Tell your friends about us:",
+		"action": {
+			"type": "button",
+			"text": "Share on Facebook",
+			"verb": "share",
+			"service": "facebook"
+		}
+	},
+	{
+		"name": "Google",
+		"match": {
+			"referrer": "google.com"
+		},
+		"message": "If you like this page, let Google know:",
+		"action": {
+			"type": "button",
+			"text": "+1",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "sinaweibo",
+		"match": {
+			"referringService": "sinaweibo"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Sina Weibo",
+			"verb": "share",
+			"service": "sinaweibo"
+		}
+	},
+	{
+		"name": "linkedin",
+		"match": {
+			"referringService": "linkedin"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on LinkedIn",
+			"verb": "share",
+			"service": "linkedin"
+		}
+	},
+	{
+		"name": "baidu",
+		"match": {
+			"referringService": "baidu"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Baidu",
+			"verb": "share",
+			"service": "baidu"
+		}
+	},
+	{
+		"name": "qzone",
+		"match": {
+			"referringService": "qzone"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Qzone",
+			"verb": "share",
+			"service": "qzone"
+		}
+	},
+	{
+		"name": "blogger",
+		"match": {
+			"referringService": "blogger"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Blogger",
+			"verb": "share",
+			"service": "blogger"
+		}
+	},
+	{
+		"name": "digg",
+		"match": {
+			"referringService": "digg"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Digg",
+			"verb": "share",
+			"service": "digg"
+		}
+	},
+	{
+		"name": "google_plusone_share",
+		"match": {
+			"referringService": "google_plusone_share"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Google+ Share",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "email",
+		"match": {
+			"referringService": "email"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Email",
+			"verb": "share",
+			"service": "email"
+		}
+	}
+]});
+</script>
+<!-- AddThis Welcome END -->
+
+</body>
+</html>

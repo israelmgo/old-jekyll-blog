@@ -1,0 +1,403 @@
+{
+  "meta":{
+    "url":"http://haoch.me",
+    "title":"Hao's Thought Works",
+    "count":39,
+    "link":"http://haoch.me/api/articles.json",
+    "description":"All articles list"
+  },
+ "data":[
+   
+  {
+    "id":"/articles/scala-operator",
+    "title":"Scala 中序操作符",
+    "url":"http://haoch.me/articles/scala-operator.html",
+    "date":"2014-03-05 00:00:00 +0100",
+    "tags":[null],
+    "previous":{"id":"/articles/scala-named-parameter","url":"/articles/scala-named-parameter.html"},
+    "next":{"id":"","url":""}
+  },
+   
+  {
+    "id":"/articles/scala-named-parameter",
+    "title":"Scala 命名参数",
+    "url":"http://haoch.me/articles/scala-named-parameter.html",
+    "date":"2014-03-05 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-mixin-composition","url":"/articles/scala-mixin-composition.html"},
+    "next":{"id":"/articles/scala-operator","url":"/articles/scala-operator.html"}
+  },
+   
+  {
+    "id":"/articles/scala-mixin-composition",
+    "title":"Scala 混入类合成",
+    "url":"http://haoch.me/articles/scala-mixin-composition.html",
+    "date":"2014-03-05 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-local-type-inference","url":"/articles/scala-local-type-inference.html"},
+    "next":{"id":"/articles/scala-named-parameter","url":"/articles/scala-named-parameter.html"}
+  },
+   
+  {
+    "id":"/articles/scala-local-type-inference",
+    "title":"Scala 局部类型推理",
+    "url":"http://haoch.me/articles/scala-local-type-inference.html",
+    "date":"2014-03-05 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-inner-class","url":"/articles/scala-inner-class.html"},
+    "next":{"id":"/articles/scala-mixin-composition","url":"/articles/scala-mixin-composition.html"}
+  },
+   
+  {
+    "id":"/articles/scala-inner-class",
+    "title":"Scala和Java内部类",
+    "url":"http://haoch.me/articles/scala-inner-class.html",
+    "date":"2014-03-04 00:00:00 +0100",
+    "tags":["scala","java",null],
+    "previous":{"id":"/articles/scala-lower-type-bound","url":"/articles/scala-lower-type-bound.html"},
+    "next":{"id":"/articles/scala-local-type-inference","url":"/articles/scala-local-type-inference.html"}
+  },
+   
+  {
+    "id":"/articles/scala-lower-type-bound",
+    "title":"Scala 类型下限",
+    "url":"http://haoch.me/articles/scala-lower-type-bound.html",
+    "date":"2014-02-19 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-upper-type-bounds","url":"/articles/scala-upper-type-bounds.html"},
+    "next":{"id":"/articles/scala-inner-class","url":"/articles/scala-inner-class.html"}
+  },
+   
+  {
+    "id":"/articles/scala-upper-type-bounds",
+    "title":"Scala 类型上限",
+    "url":"http://haoch.me/articles/scala-upper-type-bounds.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":[null],
+    "previous":{"id":"/articles/scala-traits","url":"/articles/scala-traits.html"},
+    "next":{"id":"/articles/scala-lower-type-bound","url":"/articles/scala-lower-type-bound.html"}
+  },
+   
+  {
+    "id":"/articles/scala-traits",
+    "title":"Scala Traits",
+    "url":"http://haoch.me/articles/scala-traits.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-pattern-matching","url":"/articles/scala-pattern-matching.html"},
+    "next":{"id":"/articles/scala-upper-type-bounds","url":"/articles/scala-upper-type-bounds.html"}
+  },
+   
+  {
+    "id":"/articles/scala-pattern-matching",
+    "title":"Scala 模式匹配",
+    "url":"http://haoch.me/articles/scala-pattern-matching.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-implicit-parameters","url":"/articles/scala-implicit-parameters.html"},
+    "next":{"id":"/articles/scala-traits","url":"/articles/scala-traits.html"}
+  },
+   
+  {
+    "id":"/articles/scala-implicit-parameters",
+    "title":"Scala 隐式参数",
+    "url":"http://haoch.me/articles/scala-implicit-parameters.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-higher-order-functions","url":"/articles/scala-higher-order-functions.html"},
+    "next":{"id":"/articles/scala-pattern-matching","url":"/articles/scala-pattern-matching.html"}
+  },
+   
+  {
+    "id":"/articles/scala-higher-order-functions",
+    "title":"Scala 高阶函数",
+    "url":"http://haoch.me/articles/scala-higher-order-functions.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-explicitly-typed-self-references","url":"/articles/scala-explicitly-typed-self-references.html"},
+    "next":{"id":"/articles/scala-implicit-parameters","url":"/articles/scala-implicit-parameters.html"}
+  },
+   
+  {
+    "id":"/articles/scala-explicitly-typed-self-references",
+    "title":"Scala 显式指定自身引用类型",
+    "url":"http://haoch.me/articles/scala-explicitly-typed-self-references.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-currying","url":"/articles/scala-currying.html"},
+    "next":{"id":"/articles/scala-higher-order-functions","url":"/articles/scala-higher-order-functions.html"}
+  },
+   
+  {
+    "id":"/articles/scala-currying",
+    "title":"Scala 柯里化",
+    "url":"http://haoch.me/articles/scala-currying.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-compound-types","url":"/articles/scala-compound-types.html"},
+    "next":{"id":"/articles/scala-explicitly-typed-self-references","url":"/articles/scala-explicitly-typed-self-references.html"}
+  },
+   
+  {
+    "id":"/articles/scala-compound-types",
+    "title":"Scala 混合类型",
+    "url":"http://haoch.me/articles/scala-compound-types.html",
+    "date":"2014-02-18 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-anonymouse-function","url":"/articles/scala-anonymouse-function.html"},
+    "next":{"id":"/articles/scala-currying","url":"/articles/scala-currying.html"}
+  },
+   
+  {
+    "id":"/articles/scala-anonymouse-function",
+    "title":"Scala 匿名函数",
+    "url":"http://haoch.me/articles/scala-anonymouse-function.html",
+    "date":"2014-02-17 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-annotations","url":"/articles/scala-annotations.html"},
+    "next":{"id":"/articles/scala-compound-types","url":"/articles/scala-compound-types.html"}
+  },
+   
+  {
+    "id":"/articles/scala-annotations",
+    "title":"Scala 注解",
+    "url":"http://haoch.me/articles/scala-annotations.html",
+    "date":"2014-02-16 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-automatic-closures","url":"/articles/scala-automatic-closures.html"},
+    "next":{"id":"/articles/scala-anonymouse-function","url":"/articles/scala-anonymouse-function.html"}
+  },
+   
+  {
+    "id":"/articles/scala-automatic-closures",
+    "title":"Scala 自动类型依赖闭包",
+    "url":"http://haoch.me/articles/scala-automatic-closures.html",
+    "date":"2014-02-15 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-case-classes","url":"/articles/scala-case-classes.html"},
+    "next":{"id":"/articles/scala-annotations","url":"/articles/scala-annotations.html"}
+  },
+   
+  {
+    "id":"/articles/scala-case-classes",
+    "title":"Scala 实例类",
+    "url":"http://haoch.me/articles/scala-case-classes.html",
+    "date":"2014-02-14 00:00:00 +0100",
+    "tags":[null],
+    "previous":{"id":"/articles/scala-classes","url":"/articles/scala-classes.html"},
+    "next":{"id":"/articles/scala-automatic-closures","url":"/articles/scala-automatic-closures.html"}
+  },
+   
+  {
+    "id":"/articles/scala-classes",
+    "title":"Scala 类",
+    "url":"http://haoch.me/articles/scala-classes.html",
+    "date":"2014-02-13 00:00:00 +0100",
+    "tags":[null],
+    "previous":{"id":"/articles/scala-default-parameter-values","url":"/articles/scala-default-parameter-values.html"},
+    "next":{"id":"/articles/scala-case-classes","url":"/articles/scala-case-classes.html"}
+  },
+   
+  {
+    "id":"/articles/scala-default-parameter-values",
+    "title":"Scala 默认参量值",
+    "url":"http://haoch.me/articles/scala-default-parameter-values.html",
+    "date":"2014-02-12 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-extractor-objects","url":"/articles/scala-extractor-objects.html"},
+    "next":{"id":"/articles/scala-classes","url":"/articles/scala-classes.html"}
+  },
+   
+  {
+    "id":"/articles/scala-extractor-objects",
+    "title":"Scala 提取器对象",
+    "url":"http://haoch.me/articles/scala-extractor-objects.html",
+    "date":"2014-02-11 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-generic-classes","url":"/articles/scala-generic-classes.html"},
+    "next":{"id":"/articles/scala-default-parameter-values","url":"/articles/scala-default-parameter-values.html"}
+  },
+   
+  {
+    "id":"/articles/scala-generic-classes",
+    "title":"Scala 范型类",
+    "url":"http://haoch.me/articles/scala-generic-classes.html",
+    "date":"2014-02-10 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-abstract-types","url":"/articles/scala-abstract-types.html"},
+    "next":{"id":"/articles/scala-extractor-objects","url":"/articles/scala-extractor-objects.html"}
+  },
+   
+  {
+    "id":"/articles/scala-abstract-types",
+    "title":"Scala抽象类型",
+    "url":"http://haoch.me/articles/scala-abstract-types.html",
+    "date":"2014-01-23 00:00:00 +0100",
+    "tags":["scala",null],
+    "previous":{"id":"/articles/scala-for-java-programmer","url":"/articles/scala-for-java-programmer.html"},
+    "next":{"id":"/articles/scala-generic-classes","url":"/articles/scala-generic-classes.html"}
+  },
+   
+  {
+    "id":"/articles/scala-for-java-programmer",
+    "title":"Java程序员的Scala指南",
+    "url":"http://haoch.me/articles/scala-for-java-programmer.html",
+    "date":"2014-01-22 00:00:00 +0100",
+    "tags":["scala","java",null],
+    "previous":{"id":"/articles/pig-function-tutorial","url":"/articles/pig-function-tutorial.html"},
+    "next":{"id":"/articles/scala-abstract-types","url":"/articles/scala-abstract-types.html"}
+  },
+   
+  {
+    "id":"/articles/pig-function-tutorial",
+    "title":"Pig Function Tutorial",
+    "url":"http://haoch.me/articles/pig-function-tutorial.html",
+    "date":"2014-01-11 00:00:00 +0100",
+    "tags":["apache","hadoop","pig","mapreduce","hdfs","bigdata",null],
+    "previous":{"id":"/articles/github-project-management","url":"/articles/github-project-management.html"},
+    "next":{"id":"/articles/scala-for-java-programmer","url":"/articles/scala-for-java-programmer.html"}
+  },
+   
+  {
+    "id":"/articles/github-project-management",
+    "title":"Github 项目管理与开发流程实践",
+    "url":"http://haoch.me/articles/github-project-management.html",
+    "date":"2014-01-11 00:00:00 +0100",
+    "tags":["git","github",null],
+    "previous":{"id":"/articles/internet-finance","url":"/articles/internet-finance.html"},
+    "next":{"id":"/articles/pig-function-tutorial","url":"/articles/pig-function-tutorial.html"}
+  },
+   
+  {
+    "id":"/articles/internet-finance",
+    "title":"互联网金融",
+    "url":"http://haoch.me/articles/internet-finance.html",
+    "date":"2014-01-03 00:00:00 +0100",
+    "tags":["finance",null],
+    "previous":{"id":"/articles/dive-into-fair-scheduler","url":"/articles/dive-into-fair-scheduler.html"},
+    "next":{"id":"/articles/github-project-management","url":"/articles/github-project-management.html"}
+  },
+   
+  {
+    "id":"/articles/dive-into-fair-scheduler",
+    "title":"Dive into Fair Scheduler",
+    "url":"http://haoch.me/articles/dive-into-fair-scheduler.html",
+    "date":"2013-12-20 00:00:00 +0100",
+    "tags":["hadoop","mapreduce","code",null],
+    "previous":{"id":"/articles/netflix-genie","url":"/articles/netflix-genie.html"},
+    "next":{"id":"/articles/internet-finance","url":"/articles/internet-finance.html"}
+  },
+   
+  {
+    "id":"/articles/netflix-genie",
+    "title":"Genie - Hadoop Platform as a Service",
+    "url":"http://haoch.me/articles/netflix-genie.html",
+    "date":"2013-12-16 00:00:00 +0100",
+    "tags":["hadoop","pig","hive",null],
+    "previous":{"id":"/articles/ruby-with-rvm","url":"/articles/ruby-with-rvm.html"},
+    "next":{"id":"/articles/dive-into-fair-scheduler","url":"/articles/dive-into-fair-scheduler.html"}
+  },
+   
+  {
+    "id":"/articles/ruby-with-rvm",
+    "title":"Ruby With RVM",
+    "url":"http://haoch.me/articles/ruby-with-rvm.html",
+    "date":"2013-12-13 00:00:00 +0100",
+    "tags":["ruby","rvm",null],
+    "previous":{"id":"/articles/practical-pig","url":"/articles/practical-pig.html"},
+    "next":{"id":"/articles/netflix-genie","url":"/articles/netflix-genie.html"}
+  },
+   
+  {
+    "id":"/articles/practical-pig",
+    "title":"Practical Pig Tutorial",
+    "url":"http://haoch.me/articles/practical-pig.html",
+    "date":"2013-12-13 00:00:00 +0100",
+    "tags":["hadoop","pig",null],
+    "previous":{"id":"/articles/new-hadoop-committer","url":"/articles/new-hadoop-committer.html"},
+    "next":{"id":"/articles/ruby-with-rvm","url":"/articles/ruby-with-rvm.html"}
+  },
+   
+  {
+    "id":"/articles/new-hadoop-committer",
+    "title":"2013 New Apache Hadoop Committer",
+    "url":"http://haoch.me/articles/new-hadoop-committer.html",
+    "date":"2013-12-13 00:00:00 +0100",
+    "tags":["hadoop","community","apache","news","maillist",null],
+    "previous":{"id":"/articles/bash-options","url":"/articles/bash-options.html"},
+    "next":{"id":"/articles/practical-pig","url":"/articles/practical-pig.html"}
+  },
+   
+  {
+    "id":"/articles/bash-options",
+    "title":"Bash Options",
+    "url":"http://haoch.me/articles/bash-options.html",
+    "date":"2013-12-11 00:00:00 +0100",
+    "tags":["linux","shell","bash","cn",null],
+    "previous":{"id":"/articles/slideshow","url":"/articles/slideshow.html"},
+    "next":{"id":"/articles/new-hadoop-committer","url":"/articles/new-hadoop-committer.html"}
+  },
+   
+  {
+    "id":"/articles/slideshow",
+    "title":"Slide Show (S9) - A Free Web Alternative to PowerPoint and Keynote in Ruby",
+    "url":"http://haoch.me/articles/slideshow.html",
+    "date":"2013-11-20 00:00:00 +0100",
+    "tags":["app","ruby","gem",null],
+    "previous":{"id":"/articles/intro-to-cron","url":"/articles/intro-to-cron.html"},
+    "next":{"id":"/articles/bash-options","url":"/articles/bash-options.html"}
+  },
+   
+  {
+    "id":"/articles/intro-to-cron",
+    "title":"Cron作业调度",
+    "url":"http://haoch.me/articles/intro-to-cron.html",
+    "date":"2013-10-22 00:00:00 +0200",
+    "tags":["linux","sysadmin",null],
+    "previous":{"id":"/articles/build-maven-repo-on-github","url":"/articles/build-maven-repo-on-github.html"},
+    "next":{"id":"/articles/slideshow","url":"/articles/slideshow.html"}
+  },
+   
+  {
+    "id":"/articles/build-maven-repo-on-github",
+    "title":"基于Github搭建Maven仓库",
+    "url":"http://haoch.me/articles/build-maven-repo-on-github.html",
+    "date":"2013-10-11 00:00:00 +0200",
+    "tags":["maven","github",null],
+    "previous":{"id":"/articles/java-string","url":"/articles/java-string.html"},
+    "next":{"id":"/articles/intro-to-cron","url":"/articles/intro-to-cron.html"}
+  },
+   
+  {
+    "id":"/articles/java-string",
+    "title":"Java String 内存模型",
+    "url":"http://haoch.me/articles/java-string.html",
+    "date":"2013-09-28 00:00:00 +0200",
+    "tags":["java","String",null],
+    "previous":{"id":"/articles/a-little-cup-of-coffee","url":"/articles/a-little-cup-of-coffee.html"},
+    "next":{"id":"/articles/build-maven-repo-on-github","url":"/articles/build-maven-repo-on-github.html"}
+  },
+   
+  {
+    "id":"/articles/a-little-cup-of-coffee",
+    "title":"A little cup of CoffeeScript",
+    "url":"http://haoch.me/articles/a-little-cup-of-coffee.html",
+    "date":"2013-09-21 00:00:00 +0200",
+    "tags":["coffeescript",null],
+    "previous":{"id":"/articles/site-building","url":"/articles/site-building.html"},
+    "next":{"id":"/articles/java-string","url":"/articles/java-string.html"}
+  },
+   
+  {
+    "id":"/articles/site-building",
+    "title":"关于本站",
+    "url":"http://haoch.me/articles/site-building.html",
+    "date":"2013-09-03 00:00:00 +0200",
+    "tags":["jekyll","github",null],
+    "previous":{"id":"","url":""},
+    "next":{"id":"/articles/a-little-cup-of-coffee","url":"/articles/a-little-cup-of-coffee.html"}
+  },
+   
+  null
+  ]
+}

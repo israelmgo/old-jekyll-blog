@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2011 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Chrome DevRel Team (chrome-devrel@googlegroups.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+-->
+
+<!-- GB: modifications for s9 template pack:
+ 
+  o removed offline manifest
+  o removed disclaimer; it's just a prototype anyway
+  o removed google analytics script code
+  o removed google maps script code
+  o removed all slides
+
+  o in js/utils.js changed line 541pp queryAll('.transitionSlide')
+ 
+     - looks for h1 (not h2) and doesn't include img (icon)
+
+  o in styles/commons.css commented out rules for li and bullets
+ 
+   li {
+    list-style: none;
+    padding: 10px 0;
+   }
+   .bullets {
+  font-size: 40px;
+  }
+  .bullets li::before {
+    content: '· ';
+  }
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+    <title>Pig Function</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+    <link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled />
+    <link href="styles/fonts.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="styles/presentation.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="styles/common.css" rel="stylesheet" type="text/css" media="screen" />
+    <link class="theme" href="styles/default.css" rel="stylesheet" type="text/css" media="screen" />
+    <link class="theme" href="styles/moon.css" rel="stylesheet" type="text/css" media="screen" />
+    <link class="theme" href="styles/sand.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link class="theme" href="styles/sea_wave.css" rel="stylesheet" type="text/css" media="screen"/>
+  </head>
+  <body>
+    <div id="flex-container">
+    <nav id="helpers">
+      <button title="Previous slide" id="nav-prev" class="nav-prev">&#8701;</button> 
+      <button title="Jump to a random slide" id="slide-no">5</button> 
+      <button title="Next slide" id="nav-next" class="nav-next">&#8702;</button>
+      <menu>
+        <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
+        <!-- <button type="checkbox" data-command="resources" title="View Related Resources">&#9734;</button> -->
+        <button type="checkbox" data-command="notes" title="View Slide Notes">&#9999;</button>
+        <button type="checkbox" data-command="source" title="View slide source">&#8635;</button>
+        <button type="checkbox" data-command="help" title="View Help">?</button>
+      </menu>
+    </nav>
+    <div class="slides">
+      <div id="presentation-counter">Loading...</div>
+        <div class="slide" id="landing-slide">
+          <section class="middle">
+            <p>This presentation is an HTML5 website</p>
+            <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
+          </section>
+          <aside class="note">
+            <section>
+              Welcome! (This field is for speaker notes and commentary.)
+            </section>
+          </aside> 
+        </div>
+
+        <div class="slide" id="controls-slide">
+          <header>Slides controls</header>
+          <section>
+            <ul>
+              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
+              <li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out if slides don’t fit.</li>
+              <li><span class="key">S</span> to view page source.</li>
+              <li><span class="key">T</span> to change the theme.</li>
+              <li><span class="key">H</span> to toggle syntax highlight.</li>
+              <li><span class="key">N</span> to toggle speaker notes.</li>
+              <li><span class="key">3</span> to toggle 3D effect.</li>
+              <li><span class="key">0</span> to toggle help.</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="slide" id="title-slide">
+          <section class="middle">
+            <hgroup>
+              <h1>
+                Pig Function
+              </h1>
+              <h2>
+                A  tutorial for Pig built-in function and user defined functions
+              </h2>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide" id="table-of-contents">
+          <header><h1>Agenda - Table of Contents</h1></header>
+          <section>
+            <ul id="toc-list">
+            </ul>
+          </section>
+        </div>
+
+
+        
+        <div class="slide transitionSlide" id="slide2">
+          <header><h1 id="pig-functions">Pig Functions</h1></header>
+          <section>
+              <!-- === begin markdown block ===
+
+      generated by markdown 1.1.1 on Ruby 2.0.0 (2013-06-27) [x86_64-linux]
+                on 2014-01-10 03:22:14 +0000 with Markdown engine kramdown (1.3.0)
+                  using options {}
+  -->
+
+<!-- _S9SLIDE_ -->
+
+<ul>
+  <li>Dynamic Invokers</li>
+  <li>Built in functions</li>
+  <li>User defined functions (UDFs)</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide3">
+          <header><h1 id="dynamic-invokers">Dynamic Invokers</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>DEFINE UrlDecode InvokeForString('java.net.URLDecoder.decode', 'String String'); 
+encoded_strings = LOAD 'encoded_strings.txt' as (encoded:chararray); 
+decoded_strings = FOREACH encoded_strings GENERATE UrlDecode(encoded, 'UTF-8'); 
+</code></pre>
+
+<p>Java standard functions and not UDFs yet</p>
+
+<ul>
+  <li><strong>static function</strong></li>
+  <li><strong>primitives only</strong></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>(void</td>
+          <td>string</td>
+          <td>int</td>
+          <td>long</td>
+          <td>double</td>
+          <td>float</td>
+          <td>array) =&gt; string</td>
+          <td>int</td>
+          <td>long</td>
+          <td>double</td>
+          <td>float</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide4">
+          <header><h1 id="dynamic-invokers---contine">Dynamic Invokers - contine</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<blockquote>
+
+  <pre><code>DEFINE ALIAS InvokerFor___('CLASS_PATH','PARAM_RET_TYPES')
+</code></pre>
+</blockquote>
+
+<ul>
+  <li>DEFINE</li>
+  <li>Invoker</li>
+  <li>Invoker (depending in return type)
+    <ul>
+      <li>InvokeForString</li>
+      <li>InvokeForInt</li>
+      <li>InvokeForLong</li>
+      <li>InvokeForDouble</li>
+      <li>InvokeForFloat</li>
+    </ul>
+  </li>
+  <li>Class Name</li>
+  <li>Argument Types:
+    <ul>
+      <li><em>space-delimited</em> ordered list of the classes</li>
+      <li>string, long, float, double, and int</li>
+      <li>not case sensitive</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide5">
+          <header><h1 id="built-in-functions">Built in functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>Eval Functions</li>
+  <li>Load/Store Functions</li>
+  <li>Math Functions</li>
+  <li>String Functions</li>
+  <li>Bag and Tuple Functions</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide6">
+          <header><h1 id="eval-functions">Eval Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>AVG</li>
+  <li>CONCAT</li>
+  <li>COUNT</li>
+  <li>COUNT_STAR: Computes the number of elements in a bag</li>
+  <li>DIFF</li>
+  <li>IsEmpty</li>
+  <li>MAX</li>
+  <li>MIN</li>
+  <li>SIZE</li>
+  <li>SUM</li>
+  <li>TOKENIZE</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide7">
+          <header><h1 id="loadstore-functions">Load/Store Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>Handling Compression
+    <ul>
+      <li>gzip: .gz (not splitable)</li>
+      <li>bzip: .bz or bz2</li>
+    </ul>
+  </li>
+  <li>BinStorage
+  － NOT compression
+  － multiple location inputs</li>
+  <li>PigDump
+  － store data of tuples in human-readable UTF-8 format</li>
+  <li>PigStorage: Load/Stores as structured text files</li>
+  <li>TextLoader: Loads unstructured data in UTF-8 format</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide8">
+          <header><h1 id="math-functions">Math Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>ABS</li>
+  <li>ACOS</li>
+  <li>ASIN</li>
+  <li>ATAN</li>
+  <li>CBRT</li>
+  <li>CEIL</li>
+  <li>COS</li>
+  <li>COSH</li>
+  <li>EXP</li>
+  <li>FLOOR</li>
+  <li>…</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide9">
+          <header><h1 id="string-functions">String Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>INDEXOF(string, ‘character’, startIndex)</li>
+  <li>LAST_INDEX_OF(string, ‘character’, startIndex)</li>
+  <li>LCFIRST</li>
+  <li>LOWER</li>
+  <li>REGEX_EXTRACT(string, regex, index)</li>
+  <li>REGEX_EXTRACT(string, regex)</li>
+  <li>REPLACE(string, ‘oldChar’, ‘newChar’);</li>
+  <li>STRSPLIT(string, regex, limit)</li>
+  <li>SUBSTRING(string, startIndex, stopIndex)</li>
+  <li>TRIM</li>
+  <li>UCFIRST</li>
+  <li>UPPER</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide10">
+          <header><h1 id="bag-and-tuple-functions">Bag and Tuple Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>TOBAG(expression [, expression …])</li>
+  <li>TOP(topN,column,relation)</li>
+  <li>TOTUPLE(expression [, expression …])</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide11">
+          <header><h1 id="user-defined-functions">User Defined Functions</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>-- myscript.pig
+REGISTER myudfs.jar;
+A = LOAD 'student_data' AS (name: chararray, age: int, gpa: float);
+B = FOREACH A GENERATE myudfs.UPPER(name);
+DUMP B;
+</code></pre>
+
+<ul>
+  <li>Java/Python/Javascript</li>
+  <li>Piggy Bank</li>
+  <li>Write UDF in Java: org.apache.pig.{EvalFunc,FilterFunc,StorageFunc,…}</li>
+  <li>Load UDF in Pig</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide12">
+          <header><h1 id="eval-udfs">Eval UDFS</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>org.apache.pig.EvalFunc
+    <ul>
+      <li>Object exec(Tuple objects)</li>
+    </ul>
+  </li>
+  <li>Algebraic Interface</li>
+  <li>Accumulator Interface</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide13">
+          <header><h1 id="algebraic-interface">Algebraic Interface</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>public interface Algebraic{
+    public String getInitial();
+    public String getIntermed();
+    public String getFinal();
+}
+</code></pre>
+
+<p>Gist: <a href="https://gist.github.com/haoch/8346176#file-pig-udf-count-java">https://gist.github.com/haoch/8346176#file-pig-udf-count-java</a></p>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide14">
+          <header><h1 id="accumulator-interface">Accumulator Interface</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>public interface Accumulator &lt;T&gt; {
+   /**
+    * Process tuples. Each DataBag may contain 0 to many tuples for current key
+    */
+    public void accumulate(Tuple b) throws IOException;
+    /**
+    * Called when all tuples from current key have been passed to the accumulator.
+    * @return the value for the UDF for this key.
+    */
+    public T getValue();
+    /**
+    * Called after getValue() to prepare processing for next key. 
+    */
+    public void cleanup();
+}
+</code></pre>
+
+<p>Gist: <a href="https://gist.github.com/haoch/8346176#file-pig-udf-intmax-java">https://gist.github.com/haoch/8346176#file-pig-udf-intmax-java</a></p>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide15">
+          <header><h1 id="filter-function">Filter Function</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li>org.apache.pig.FilterFunc
+    <ul>
+      <li>Boolean exec(Tuple input)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Gist:<a href="https://gist.github.com/haoch/8346176#file-pig-udf-isempty-java">https://gist.github.com/haoch/8346176#file-pig-udf-isempty-java</a></p>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide16">
+          <header><h1 id="loadstorage-udf">Load/Storage UDF</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>-- full outer join
+A = LOAD 'student_data' AS (name: chararray, age: int, gpa: float);
+B = LOAD 'voter_data' AS (name: chararray, age: int, registration: chararay, contributions: float);
+C = COGROUP A BY name, B BY name;
+D = FOREACH C GENERATE group, flatten((IsEmpty(A) ? null : A)), flatten((IsEmpty(B) ? null : B));
+dump D;
+</code></pre>
+
+<ul>
+  <li>org.apache.pig.StoreFunc
+    <ul>
+      <li>public void putNext(Tuple f) throws IOException</li>
+    </ul>
+  </li>
+  <li>org.apache.pig.LoadFunc
+    <ul>
+      <li>public Tuple getNext() throws IOException</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide17">
+          <header><h1 id="load-udf">Load UDF</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+
+<pre><code>REGISTER myudfs.jar;
+A = LOAD 'student_data' AS (name: chararray, age: int, gpa: float);
+B = FOREACH A GENERATE myudfs.UPPER(name);
+DUMP B;
+</code></pre>
+
+<ul>
+  <li>REGISTER <jar></jar></li>
+  <li>packege.ClassName(arguments)</li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide18">
+          <header><h1 id="reference">Reference</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<ul>
+  <li><a href="http://pig.apache.org/docs/r0.9.1/func.html">Pig Function</a></li>
+  <li><a href="http://pig.apache.org/docs/r0.9.1/udf.html">Pig UDF</a></li>
+  <li><a href="http://www.amazon.fr/Programming-Pig-Alan-Gates/dp/1449302645/ref=sr_1_1?ie=UTF8&amp;qid=1389288284&amp;sr=8-1&amp;keywords=pig+programming">Programming-Pig</a></li>
+</ul>
+
+
+
+          </section>
+        </div>
+        
+        <div class="slide transitionSlide" id="slide19">
+          <header><h1 id="the-end">The End</h1></header>
+          <section>
+              <!-- _S9SLIDE_ -->
+
+<p><img src="http://haoch.me/images/weixin_qrcode_30cm.jpg" alt="" /></p>
+<br/>
+<br/>
+<p>Hao<br />
+<a href="http://haoch.me">haoch.me</a></p>
+
+<!-- === end markdown block === -->
+
+          </section>
+        </div>
+        
+
+
+        <div id="speaker-note" class="invisible" style="display: none;"></div>
+        <aside id="help" class="sidebar invisible" style="display: none;">
+          <table>
+            <caption>Help</caption>
+            <tbody>
+              <tr>
+                <th>Move Around</th>
+                <td>&larr;&nbsp;&rarr;</td>
+              </tr>
+              <tr>
+                <th>Source File</th>
+                <td>s</td>
+              </tr>
+              <tr>
+                <th>Change Theme</th>
+                <td>t</td>
+              </tr>
+              <tr>
+                <th>Syntax Highlight</th>
+                <td>h</td>
+              </tr>
+              <tr>
+                <th>Speaker Notes</th>
+                <td>n</td>
+              </tr>
+              <tr>
+                <th>Toggle 3D</th>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th>Help</th>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
+
+    </div> <!-- slides -->
+    </div>
+    
+    <!--[if lt IE 9]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+    <script>CFInstall.check({ mode: "overlay" });</script>
+    <![endif]-->
+
+    <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
+    <script src="js/utils.js"></script>
+  </body>
+</html>

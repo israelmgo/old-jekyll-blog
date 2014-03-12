@@ -1,0 +1,37 @@
+{
+  "meta":{
+    "url":"http://haoch.me",
+    "title":"Hao's Thought Works",
+    "count":4,
+    "link":"http://haoch.me/api/links.json",
+    "description":"all links list"
+  },
+  "data":[
+   
+    {
+      "url":"http://hi.baidu.com/wzcyc",
+      "description":"Data Warehouse,Teradata, SQL, ETL, Abinitio，Hadoop, Java and 管理",
+      "title":"Big Data is Something"
+    },
+   
+    {
+      "url":"http://www.lucao.com.cn",
+      "description":"数据工程师曹鲁",
+      "title":"北落师门"
+    },
+   
+    {
+      "url":"http://yankay.com",
+      "description":"颜开的博客",
+      "title":"我自然"
+    },
+   
+    {
+      "url":"http://chenqiushi.com/",
+      "description":"写代码是生存，摄影是生活",
+      "title":"秋实"
+    },
+  
+    null
+  ]
+}

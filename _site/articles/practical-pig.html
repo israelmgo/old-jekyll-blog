@@ -1,0 +1,1032 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Practical Pig Tutorial &#8211; Hao's Thought Works</title>
+<meta name="description" content="">
+<meta name="keywords" content="hadoop, pig">
+<!-- Twitter Cards -->
+
+	
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:image" content="http://haoch.me/images/pig.gif"/>
+		
+
+<meta name="twitter:title" content="Practical Pig Tutorial">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@hchen7">
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="blog">
+<meta property="og:image" content="http://haoch.me/images/pig.gif">
+<meta property="og:title" content="Practical Pig Tutorial">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://haoch.me/articles/practical-pig.html">
+<meta property="og:site_name" content="Hao's Thought Works">
+<!-- Webmaster Tools verfication -->
+
+
+
+
+<link rel="canonical" href="http://haoch.me/articles/practical-pig.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hao's Thought Works Feed">
+<link rel="author" href="https://plus.google.com/103688232748743092549?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- For all browsers -->
+<link rel="stylesheet" type="text/css" href="/assets/css/main.min.css">
+
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/lato:n3,i3,n4,i4,n7.js" type="text/javascript"></script>
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js" type="text/javascript"></script>
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.9.1.min.js" data-cfasync="false"></script>
+<script data-cfasync="false">window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/images/favicon.png">
+<!-- non-retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-57x57-precomposed.png" sizes="57x57">
+<!-- non-retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-72x72-precomposed.png" sizes="72x72">
+<!-- non-retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-76x76-precomposed.png" sizes="76x76">
+<!-- retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
+<!-- retina iPhone iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+<!-- retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
+<!-- retina iPad iOS 7 -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-152x152-precomposed.png" sizes="152x152">
+
+</head>
+
+<body id="post" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<div class="site-header">
+	<div class="masthead-wrapper">
+		<header id="masthead" itemscope itemtype="http://schema.org/Organization">
+			<!--
+			<a href="http://haoch.me" class="site-logo" rel="home" title="Hao's Thought Works" itemprop="url">
+				<img src="http://haoch.me/images/site-logo.jpg" width="50" height="50" alt="Hao's Thought Works logo" itemprop="logo">
+			</a>
+			-->
+
+			<span class="site-title">					
+				<a href="http://haoch.me">Hao's Thought Works</a>
+				<span class="bio">Data driving world</span>
+			</span>
+		</header><!-- /.masthead -->
+		<nav role="navigation" id="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://haoch.me/about.html">About</a></li>
+		        
+				<li><a href="http://haoch.me/articles">Articles</a></li>
+		        
+				<li><a href="http://haoch.me/tags">Tags</a></li>
+		        
+				<li><a href="http://haoch.me/links">Links</a></li>
+		        
+                
+		    </ul>
+		</nav>
+	</div><!-- /.entry-wrapper -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="entry-header">
+      <!--
+      <div class="entry-image">
+        <img src="http://haoch.me/images/pig.gif" class="entry-feature-image" alt="Practical Pig Tutorial" itemprop="image">
+        
+      </div>
+      -->
+      <!-- /.entry-image -->
+      <h1 class="entry-title" itemprop="name">Practical Pig Tutorial</h1>
+    </header>
+    <div class="entry-wrapper">
+      <div class="entry-content" itemprop="description">
+        <p><strong>TALK</strong>: <a href="http://haoch.me/talks/practical_pig">http://haoch.me/talks/practical_pig</a></p>
+
+<p><img src="http://hadoop.apache.org/images/hadoop-logo.jpg" alt="Hadoop" />
+<img width="60" height="90" alt="Pig" src="http://hortonworks.com/wp-content/uploads/2013/10/pig.gif" /> </p>
+
+<h1 id="practical-pig">Practical Pig</h1>
+<p><strong>Agenda</strong></p>
+
+<ul>
+  <li>Why pig</li>
+  <li>Components</li>
+  <li>How it works with Map Reduce</li>
+  <li>Pig Latin</li>
+  <li>Advanced References and topics</li>
+</ul>
+
+<h1 id="why-pig">Why Pig</h1>
+<ul>
+  <li>Map Reduce is very powerful, but:
+    <ul>
+      <li>requires a Java programmer</li>
+      <li>re-invent common functionality (join, filter,etc)</li>
+    </ul>
+  </li>
+  <li>Pig provides a higher level language</li>
+  <li>Increases productivity
+    <ul>
+      <li>10 lines of Pig Latin = 200 lines of Java</li>
+      <li>4 hours of writing in java took 15 mins in Pig Latin</li>
+    </ul>
+  </li>
+  <li>Face to no only java programmers</li>
+  <li>Provides common operations like join, group,filter,sort</li>
+</ul>
+
+<h1 id="why-new-languages">Why new languages</h1>
+<ul>
+  <li>Pig Latin is procedural, where SQL is declarative</li>
+  <li>Pig Latin allows pipeline developers to decide where to checkpoint data in the pipeline</li>
+  <li>Pig Latin allows the developer to select specific operator implementations directly rather than relying on the optimizer</li>
+  <li>Pig Latin supports splits in the pipeline</li>
+  <li>Pig Latin allows developers to insert their own code and existing binaries almost anywhere in the data pipeline</li>
+  <li>Metadata not requireds, but used when available</li>
+</ul>
+
+<h1 id="how-pig-work">How Pig Work</h1>
+<ul>
+  <li><strong>Pig Engine</strong>: provides an execution engine atop Hadoop
+    <ul>
+      <li>Removes need for users to tune Hadoop for their needs</li>
+      <li>Insulates users from changes in Hadoop interfaces</li>
+    </ul>
+  </li>
+  <li><strong>$PIG_HOME/lib/pig.jar</strong>
+    <ul>
+      <li>parses</li>
+      <li>checks</li>
+      <li>optimizes</li>
+      <li>plans execution</li>
+      <li>submits jar to Hadoop</li>
+      <li>monitors job progress </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="how-pig-is-being-used">How Pig is being Used</h1>
+<ul>
+  <li>Web log processing</li>
+  <li>Data processing for web search platforms</li>
+  <li>Ad hoc queries across large data sets</li>
+  <li>Rapid prototyping of algorithms for processing large data sets</li>
+</ul>
+
+<h1 id="performance">Performance</h1>
+<p><strong>Pig Mix</strong></p>
+
+<p>PigMix is a set of queries used test pig performance from release to release: <a href="https://cwiki.apache.org/confluence/display/PIG/PigMix">https://cwiki.apache.org/confluence/display/PIG/PigMix
+</a></p>
+
+<h1 id="data-types">Data Types</h1>
+<ul>
+  <li>Scalar types:
+    <ul>
+      <li><strong>int</strong></li>
+      <li><strong>long</strong></li>
+      <li><strong>double</strong></li>
+      <li><strong>chararray</strong></li>
+      <li><strong>bytearray</strong></li>
+    </ul>
+  </li>
+  <li>Complex types:
+    <ul>
+      <li><strong>map</strong>: associative array</li>
+      <li><strong>tuple</strong>: ordered list of data, elements may be of any scalar or complex type</li>
+      <li><strong>bag</strong>: unordered collection of tuples</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="example">Example</h1>
+<ul>
+  <li><strong>Pig</strong>: <code>$pig</code> / <code>$pig -x local</code></li>
+  <li><strong>Grunt</strong>: gun readline interactive tool</li>
+  <li>Data
+    <ul>
+      <li><a href="https://svn.apache.org/repos/asf/pig/trunk/tutorial/data/">https://svn.apache.org/repos/asf/pig/trunk/tutorial/data/</a></li>
+      <li><a href="https://raw.github.com/somoso/basedbible/master/bible.txt">https://raw.github.com/somoso/basedbible/master/bible.txt</a></li>
+      <li><a href="https://raw.github.com/somoso/basedbible/master/bible.txt">http://SHAKESPEARElib.ru/SHAKESPEARE/sonnets.txt_Contents</a></li>
+      <li><a href="https://raw.github.com/somoso/basedbible/master/bible.txt">http://www.ccel.org/ccel/bible/kjv.txt</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="operation">Operation</h1>
+<ul>
+  <li><strong>Illustrate Operation</strong>
+    <ul>
+      <li>DESCRIBE</li>
+      <li>EXPLAIN</li>
+      <li>ILLUSTRATE</li>
+    </ul>
+  </li>
+  <li><strong>Relation Operation</strong>
+    <ul>
+      <li>LOAD</li>
+      <li>STORE</li>
+      <li>FOREACH</li>
+      <li>FILTER</li>
+      <li>GROUP / COGROUP</li>
+      <li>JOIN</li>
+      <li>ORDER</li>
+      <li>DISTINCT</li>
+      <li>UNION</li>
+      <li>SPLIT</li>
+      <li>STREAM</li>
+      <li>DUMP</li>
+      <li>LIMIT</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="aggregation">Aggregation</h1>
+<p><strong>GROUP … BY …</strong></p>
+
+<p>Count number of times each user appears in the excite data set;</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">log</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;/test/pig/tutorial/data/excite-small.log&#39;</span> <span class="n">AS</span> <span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+<span class="n">grpd</span> <span class="o">=</span> <span class="n">GROUP</span> <span class="n">log</span> <span class="n">BY</span> <span class="n">user</span><span class="p">;</span>
+<span class="n">cntd</span> <span class="o">=</span> <span class="n">FOREACH</span> <span class="n">grpd</span> <span class="n">GENERATE</span> <span class="n">group</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">log</span><span class="p">);</span>
+<span class="n">STORE</span> <span class="n">cntd</span> <span class="n">INTO</span> <span class="s">&#39;group_output&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<h1 id="grouping">Grouping</h1>
+<ul>
+  <li>Separate operation from applying aggregate functions</li>
+  <li>
+    <p>Output : (key,bag), bag contains a tuple of every records with the key</p>
+
+    <pre><code>  alan     1
+  bob      9     =&gt; alan, {(alan,1),(alan,3)}
+  alan     3        bob,{(bob,9)}
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="filtering">Filtering</h1>
+<p><strong>FILTER … BY …</strong></p>
+
+<p>Get high frequency users whose count is great than 50</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">log</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;/test/pig/tutorial/data/excite-small.log&#39;</span> <span class="n">AS</span> <span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+<span class="n">grpd</span> <span class="o">=</span> <span class="n">GROUP</span> <span class="n">log</span> <span class="n">BY</span> <span class="n">user</span><span class="p">;</span>
+<span class="n">cntd</span> <span class="o">=</span> <span class="n">FOREACH</span> <span class="n">grpd</span> <span class="n">GENERATE</span> <span class="n">group</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">log</span><span class="p">)</span> <span class="n">AS</span> <span class="n">cnt</span><span class="p">;</span>
+<span class="n">fltrd</span> <span class="o">=</span> <span class="n">FILTER</span> <span class="n">cntd</span> <span class="n">BY</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+<span class="n">STORE</span> <span class="n">fltrd</span> <span class="n">INTO</span> <span class="s">&#39;filter_output&#39;</span><span class="p">;</span> 
+</code></pre></div>
+
+<h1 id="sorting">Sorting</h1>
+<p><strong>ORDER … BY …</strong></p>
+
+<p>Sort high frequency users by frequency</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">log</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;/test/pig/tutorial/data/excite-small.log&#39;</span> <span class="n">AS</span> <span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+<span class="n">grpd</span> <span class="o">=</span> <span class="n">GROUP</span> <span class="n">log</span> <span class="n">BY</span> <span class="n">user</span><span class="p">;</span>
+<span class="n">cntd</span> <span class="o">=</span> <span class="n">FOREACH</span> <span class="n">grpd</span> <span class="n">GENERATE</span>
+<span class="n">group</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">log</span><span class="p">)</span> <span class="n">AS</span> <span class="n">cnt</span><span class="p">;</span>
+<span class="n">fltrd</span> <span class="o">=</span> <span class="n">FILTER</span> <span class="n">cntd</span> <span class="n">BY</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+<span class="n">srtd</span> <span class="o">=</span> <span class="n">ORDER</span> <span class="n">fltrd</span> <span class="n">BY</span> <span class="n">cnt</span><span class="p">;</span>
+<span class="n">STORE</span> <span class="n">srtd</span> <span class="n">INTO</span> <span class="s">&#39;sort_output&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<h1 id="word-count">Word Count</h1>
+<p>Word count on King James Bible data and Shakespeare’s works</p>
+
+<ul>
+  <li>King James Bible
+    <ul>
+      <li>INPUT:’/test/bible-kjv.txt’</li>
+      <li>OUTPUT: ‘bible_freq’</li>
+    </ul>
+  </li>
+  <li>Shakespeare’s works
+    <ul>
+      <li>INPUT:’/test/shakespeare_sonnets.txt’</li>
+      <li>OUTPUT:’shake_freq’</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="word-count---continue">Word Count - Continue</h1>
+
+<div class="highlight"><pre><code class="python"><span class="n">A</span> <span class="o">=</span> <span class="n">load</span> <span class="s">&#39;/test/bible-kjv.txt&#39;</span> <span class="p">;</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">foreach</span> <span class="n">A</span> <span class="n">generate</span> <span class="n">flatten</span><span class="p">(</span><span class="n">TOKENIZE</span><span class="p">((</span><span class="n">chararray</span><span class="p">)</span><span class="err">$</span><span class="mi">0</span><span class="p">))</span> <span class="k">as</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">C</span> <span class="o">=</span> <span class="nb">filter</span> <span class="n">B</span> <span class="n">by</span> <span class="n">word</span> <span class="n">matches</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">w+&#39;</span><span class="p">;</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">group</span> <span class="n">C</span> <span class="n">by</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">foreach</span> <span class="n">D</span> <span class="n">generate</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">C</span><span class="p">),</span> <span class="n">group</span><span class="p">;</span>
+<span class="n">store</span> <span class="n">E</span> <span class="n">into</span> <span class="s">&#39;bible_freq&#39;</span><span class="p">;</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">load</span> <span class="s">&#39;/test/shakespeare_sonnets.txt&#39;</span><span class="p">;</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">foreach</span> <span class="n">A</span> <span class="n">generate</span> <span class="n">flatten</span><span class="p">(</span><span class="n">TOKENIZE</span><span class="p">((</span><span class="n">chararray</span><span class="p">)</span><span class="err">$</span><span class="mi">0</span><span class="p">))</span> <span class="k">as</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">C</span> <span class="o">=</span> <span class="nb">filter</span> <span class="n">B</span> <span class="n">by</span> <span class="n">word</span> <span class="n">matches</span> <span class="s">&#39;</span><span class="se">\\</span><span class="s">w+&#39;</span><span class="p">;</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">group</span> <span class="n">C</span> <span class="n">by</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">foreach</span> <span class="n">D</span> <span class="n">generate</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">C</span><span class="p">),</span> <span class="n">group</span><span class="p">;</span>
+<span class="n">store</span> <span class="n">E</span> <span class="n">into</span> <span class="s">&#39;shake_freq&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<h1 id="join">Join</h1>
+<p>Find words that are in both the King James Version of Bible and Shakespeare’s sonnets</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">bible</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;bible_freq&#39;</span> <span class="n">AS</span> <span class="p">(</span><span class="n">cnt</span><span class="p">,</span><span class="n">word</span><span class="p">);</span>
+<span class="n">shake</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;shake_freq&#39;</span> <span class="n">AS</span> <span class="p">(</span><span class="n">cnt</span><span class="p">,</span><span class="n">word</span><span class="p">);</span>
+<span class="n">both</span> <span class="o">=</span> <span class="n">JOIN</span> <span class="n">bible</span> <span class="n">BY</span> <span class="n">word</span><span class="p">,</span> <span class="n">shake</span> <span class="n">BY</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">STORE</span> <span class="n">both</span> <span class="n">INTO</span> <span class="s">&#39;both_words&#39;</span>
+</code></pre></div>
+
+<h1 id="anti-join">Anti-Join</h1>
+<p>Find words that are in the Bible that are not in Shakespeare.</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">cogrp</span> <span class="o">=</span> <span class="n">COGROUP</span>  <span class="n">bible</span> <span class="n">BY</span> <span class="n">word</span><span class="p">,</span> <span class="n">shake</span> <span class="n">BY</span> <span class="n">word</span><span class="p">;</span>
+<span class="n">noshake_grp</span> <span class="o">=</span> <span class="n">FILTER</span> <span class="n">cogrp</span> <span class="n">BY</span> <span class="n">count</span><span class="p">(</span><span class="n">shake</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">noshake</span> <span class="o">=</span> <span class="n">FOREACH</span> <span class="n">noshake_grp</span> <span class="n">GENERATE</span> <span class="n">FLATTEN</span><span class="p">(</span><span class="n">bible</span><span class="p">);</span>
+<span class="n">STORE</span>  <span class="n">noshake</span> <span class="n">INTO</span> <span class="s">&#39;noshake&#39;</span>
+</code></pre></div>
+
+<h1 id="cogrouping">Cogrouping</h1>
+<ul>
+  <li>A generalization of grouping</li>
+  <li>Keys of two (or more ) inputs are collected</li>
+  <li>
+    <p>OUTPUT: (key,bag1,bag2,…), contains multi bags with records in the key</p>
+
+    <pre><code>  alan     1    alan     5 
+  bob      9    bob      9  =&gt;  {alan, {(alan,1),(alan,3)},{alan,5}}
+  alan     3                    bob,{(bob,9),},{}
+</code></pre>
+  </li>
+</ul>
+
+<h1 id="nested-operations">Nested Operations</h1>
+<p><strong>FOREACH .. { … }</strong></p>
+
+<div class="highlight"><pre><code class="python"><span class="n">FOREACH</span> <span class="n">pipe</span> <span class="p">{</span>
+    <span class="n">operation</span> <span class="mi">1</span><span class="p">;</span>
+     <span class="n">operation</span> <span class="mi">2</span><span class="p">;</span>
+     <span class="o">--</span> <span class="n">more</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h1 id="splitting">Splitting</h1>
+<p>Data flow need not be linear, can be split explicitly:</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">A</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;data&#39;</span><span class="p">;</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">FILTER</span> <span class="n">A</span> <span class="n">BY</span> <span class="err">$</span><span class="mi">0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">FILTER</span> <span class="n">A</span> <span class="n">BY</span> <span class="err">$</span><span class="mi">0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">LOAD</span> <span class="s">&#39;data&#39;</span><span class="p">;</span>
+<span class="n">SPLIT</span> <span class="n">A</span> <span class="n">INTO</span> <span class="n">B</span> <span class="n">IF</span> <span class="err">$</span><span class="mi">0</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">C</span> <span class="n">IF</span> <span class="err">$</span><span class="mi">0</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div>
+
+<h1 id="function">Function</h1>
+<p><strong>Piggy Bank</strong>: <a href="https://cwiki.apache.org/confluence/display/PIG/PiggyBank">https://cwiki.apache.org/confluence/display/PIG/PiggyBank</a></p>
+
+<ul>
+  <li><strong>Eval function</strong>: MAX, AVG, TKENIZE, etc.</li>
+  <li><strong>Filter function</strong>: IsEmpty, etc.</li>
+  <li><strong>Load function</strong>: TextLoader, etc.</li>
+  <li><strong>Store function</strong>: PigStorage, etc.</li>
+</ul>
+
+<h1 id="user-defined-functions">User Defined Functions</h1>
+<ul>
+  <li><strong>Definition</strong>:
+    <ul>
+      <li>org.apache.pig.EvalFunc</li>
+      <li>org.apache.pig.FilterFunc</li>
+      <li>org.apache.pig.LoadFunc</li>
+      <li>org.apache.pig. StoreFunc  </li>
+    </ul>
+  </li>
+  <li><strong>Usage</strong>:</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"> 
+<span class="n">REGISTER</span> <span class="s">&#39;pig-udf.jar&#39;</span><span class="p">;</span>
+<span class="n">FILTER</span> <span class="n">A</span> <span class="n">BY</span>  <span class="n">com</span><span class="o">.</span><span class="n">ebay</span><span class="o">.</span><span class="n">hchen9</span><span class="o">.</span><span class="n">pig</span><span class="o">.</span><span class="n">MyUDF</span><span class="p">(</span><span class="err">$</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">DEFINE</span> <span class="n">myUDF</span> <span class="n">com</span><span class="o">.</span><span class="n">ebay</span><span class="o">.</span><span class="n">hchen9</span><span class="o">.</span><span class="n">pig</span><span class="o">.</span><span class="n">MyUDF</span><span class="p">();</span>
+<span class="n">FILTER</span> <span class="n">A</span> <span class="n">BY</span>  <span class="n">myUDF</span><span class="p">(</span><span class="err">$</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+
+<h1 id="stream">Stream</h1>
+<p><strong>STREAM … THROUGH script AS schema</strong></p>
+
+<div class="highlight"><pre><code class="python"> 
+<span class="n">STREAM</span> <span class="n">A</span> <span class="n">THROUGH</span> <span class="sb">`cut -f 2`</span> <span class="n">AS</span> <span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+     
+<span class="n">DEFINE</span> <span class="n">script</span> <span class="sb">`script_file_name`</span> <span class="n">SHIP</span> <span class="p">(</span><span class="s">&#39;script_file_path&#39;</span><span class="p">);</span>
+<span class="n">STREAM</span> <span class="n">A</span> <span class="n">THROUGH</span> <span class="n">script</span> <span class="n">AS</span> <span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="custom-load--store">Custom Load &amp; Store</h1>
+<ul>
+  <li>Default: data is tab separated UTF-8</li>
+  <li>User can set delimiter</li>
+  <li>Customize load/store function to handle de/serialization of the data</li>
+</ul>
+
+<h1 id="parameter">Parameter</h1>
+<ul>
+  <li>Parameters:
+    <ul>
+      <li>Command arguments: pig -param input=&lt;INPUT&gt;</li>
+      <li>Parameters file : pig -param_file &lt;PARAM_FILE&gt;</li>
+    </ul>
+  </li>
+  <li>Usage: $input</li>
+  <li>Example: <a href="https://github.scm.corp.ebay.com/hchen9/capman-data/blob/master/hql/capman/hadoop_cpmn_env.param">capman-data/hql/capman/hadoop_cpmn_env.param</a></li>
+</ul>
+
+<h1 id="macro">Macro</h1>
+<ul>
+  <li><strong>Definition</strong>: </li>
+</ul>
+
+<div class="highlight"><pre><code class="python"> 
+<span class="n">DEFINE</span> <span class="n">macro</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="n">RETURNS</span> <span class="n">ret_val</span><span class="p">{</span>
+    <span class="err">$</span><span class="n">ret_val</span><span class="o">=...</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+  <li><strong>Import</strong>:</li>
+</ul>
+
+<div class="highlight"><pre><code class="python"> 
+<span class="n">IMPORT</span> <span class="s">&#39;pig.macro&#39;</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">macr</span><span class="p">(</span><span class="n">param</span><span class="p">);</span>
+</code></pre></div>
+
+<ul>
+  <li>Example: <a href="https://github.scm.corp.ebay.com/hchen9/capman-data/blob/master/hql/capman/hadoop_cpmn_macro.pig">capman-data/hql/capman/hadoop_cpmn_macro.pig</a></li>
+</ul>
+
+<h1 id="case-study">Case Study</h1>
+<ul>
+  <li>Hadoop mapreduce job summary log : /logs/hadoop-mapreduce.jobsummary.log.2013-10-02
+    <ul>
+      <li><a href="https://github.scm.corp.ebay.com/hchen9/hadoop-learning/blob/master/pig/src/main/pig/log_spliter.py">log_spliter.py</a></li>
+      <li><a href="https://github.scm.corp.ebay.com/hchen9/hadoop-learning/blob/master/pig/src/main/pig/jobsummary_log.pig">job_summary_log.pig</a></li>
+    </ul>
+  </li>
+  <li>Capman data process: <a href="https://github.scm.corp.ebay.com/hchen9/capman-data">capman-data</a></li>
+</ul>
+
+<h1 id="advanced-references--topics">Advanced References &amp; Topics</h1>
+<ul>
+  <li>Why Pig Latin instead of SQL<br /> <a href="http://infolab.stanford.edu/~olston/publications/sigmod08.pdf">http://infolab.stanford.edu/~olston/publications/sigmod08.pdf</a></li>
+  <li>Pig performance<br /><a href="https://cwiki.apache.org/confluence/display/PIG/PigMix">https://cwiki.apache.org/confluence/display/PIG/PigMix</a></li>
+  <li>Pig UDF Manual <br /><a href="http://wiki.apache.org/pig/UDFManual">http://wiki.apache.org/pig/UDFManual</a></li>
+  <li>Programming Pig <br /><a href="http://www.amazon.com/Programming-Pig-Otx-Alan-Gates/dp/1449302645">http://www.amazon.com/Programming-Pig-Otx-Alan-Gates/dp/1449302645</a></li>
+  <li>Apache Pig Document <br /><a href="https://cwiki.apache.org/confluence/display/PIG/Index">https://cwiki.apache.org/confluence/display/PIG/Index</a></li>
+</ul>
+
+<h1 id="thanks-you">Thanks you</h1>
+<p>Hao Chen</p>
+
+<p>eBay Inc.<br />
+<a href="http://haoch.me">haoch.me</a></p>
+
+
+       <br /> <small>（转载本站文章请注明作者和出处 <a href="/articles/practical-pig.html">haoch.me</a>，请勿用于任何商业用途）</small>
+
+        
+        <hr />
+        <div class="entry-meta">
+          <a href="http://haoch.me/about.html"><img src="http://haoch.me/images/bio-photo-200x200.png" alt="Hao photo" class="author-photo" width="30" height="30"></a>
+          <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Published by <span itemprop="name" class="fn"><a href="http://haoch.me/about.html" title="About Hao" itemprop="url">Hao</a></span> on </span>
+          <span class="entry-date date published"><time datetime="2013-12-13T00:00:00+01:00" itemprop="datePublished">December 13, 2013</time></span>
+          
+          <span class="entry-tags">
+              <a href="http://haoch.me/tag/hadoop" title="hadoop" class="tag" rel="tag">hadoop</a><a href="http://haoch.me/tag/pig" title="pig" class="tag" rel="tag">pig</a>
+          </span>
+            <!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style addthis_sharing">
+<a class="addthis_button_sinaweibo"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+<!-- AddThis Button END -->
+
+
+        </div><!-- /.entry-meta -->
+      </div><!-- /.entry-content -->
+      
+      <nav class="pagination" role="navigation">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+          
+          
+        
+          
+          
+        
+          
+          
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+          <a href="/articles/new-hadoop-committer.html" class="previous-link" title="Previous article"><i class="icon-chevron-left icon-large"></i> <span>Previous</span></a>
+        
+          <a href="http://haoch.me/articles/" class="archive-link"><i class="icon-list-ul icon-large"></i> <span>Archive</span></a>
+        
+          <a href="/articles/ruby-with-rvm.html" class="next-link" title="Next article"><i class="icon-chevron-right icon-large"></i> <span>Next</span></a>
+        
+    </nav><!-- /.pagination -->
+    <div id="disqus_thread"></div><!-- /#disqus_thread -->
+    <div id="addthis_trendingcontent"></div>
+    </div><!-- /.entry-wrapper -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span class="disclaimer">
+    Proudly built with <a href="http://jekyllrb.com/">Jekyll</a> and  hosted by <a href="http://github.com">Github</a>. <a href="/terms.html">Privacy and Disclosure Policies</a>
+</span>
+
+<div class="social-icons">
+	<a href="http://github.com/haoch" title="Hao on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	<a href="http://linkedin.com/in/ihaochen" title="Hao on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	<a href="http://weibo.com/haochencn" title="Hao on Weibo" target="_blank"><i class="icon-weibo icon-2x"></i></a>
+	<a href="http://twitter.com/hchen7" title="Hao on Twitter" target="_blank"><i class="icon-twitter icon-2x"></i></a>
+	<a href="http://facebook.com/haochencn" title="Hao on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>
+	<a href="https://plus.google.com/103688232748743092549" title="Hao on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>
+	<a href="http://instagram.com/haochen90" title="Hao on Instagram" target="_blank"><i class="icon-instagram icon-2x"></i></a>
+	
+	<a href="http://feeds.feedburner.com/MadeMistakes" title="Atom/RSS feed"><i class="icon-rss icon-2x"></i></a>
+</div>
+
+<!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+<script data-cfasync="false" type="text/javascript" src="/assets/js/main.min.js"></script>
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40551822-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'haoch'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript><div class="upgrade">Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></div></noscript>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52aadb5c3b6ff852"></script>
+<script type="text/javascript">
+addthis.layers({
+  'theme' : 'transparent',
+  'domain' : 'haoch.me',
+  /* 'share' : {
+    'position' : 'left',
+    'numPreferredServices' : 6,
+    'offset':{
+      'top':'25%'
+    },
+    'services':'twitter,sinaweibo,facebook,google_plusone_share,email,more'
+  },*/ 
+  'follow' : {
+    'services' : [
+      {'service': 'sinaweibo', 'id': 'Hochn'},
+      {'service': 'twitter', 'id': 'HChen7'},
+      {'service': 'facebook', 'id': 'haochencn'},
+      {'service': 'linkedin', 'id': 'ihaochen'},
+      {'service': 'google_follow', 'id': '103688232748743092549'},
+      {'service': 'rss', 'id': 'http://haoch.me/feed.xml'}
+    ]
+  },  
+  'whatsnext' : {
+      'recommendedTitle' : 'Recommended for you',
+      'shareMsg' : 'Share to [x]',
+      'followMsg' : 'Follow us on [x]',
+      'theme' : 'transparent',
+      'desktop' : true
+  }
+  /*
+  ,  
+  'recommended' : {
+      'title' : 'Recommended for you',
+      'mobile' : true,
+      'desktop' : true,
+      'theme' : 'transparent'
+  } */
+});
+addthis.box("#addthis_trendingcontent", {
+    feed_title : "Popular Articles - 热门文章",
+    feed_type : "trending",
+    feed_period : "month",
+    num_links : 5,
+    height : "auto",
+   width : "auto"});
+</script>
+<!-- AddThis Smart Layers END -->
+<!-- AddThis Welcome BEGIN -->
+<script type='text/javascript'>
+addthis.bar.initialize({'default':{
+	"backgroundColor": "#000000",
+	"buttonColor": "#098DF4",
+	"textColor": "#FFFFFF",
+	"buttonTextColor": "#FFFFFF",
+	"hideAfter": 20
+},rules:[
+	{
+		"name": "Twitter",
+		"match": {
+			"referringService": "twitter"
+		},
+		"message": "If you find this page helpful:",
+		"action": {
+			"type": "button",
+			"text": "Tweet it!",
+			"verb": "share",
+			"service": "twitter"
+		}
+	},
+	{
+		"name": "Facebook",
+		"match": {
+			"referringService": "facebook"
+		},
+		"message": "Tell your friends about us:",
+		"action": {
+			"type": "button",
+			"text": "Share on Facebook",
+			"verb": "share",
+			"service": "facebook"
+		}
+	},
+	{
+		"name": "Google",
+		"match": {
+			"referrer": "google.com"
+		},
+		"message": "If you like this page, let Google know:",
+		"action": {
+			"type": "button",
+			"text": "+1",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "sinaweibo",
+		"match": {
+			"referringService": "sinaweibo"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Sina Weibo",
+			"verb": "share",
+			"service": "sinaweibo"
+		}
+	},
+	{
+		"name": "linkedin",
+		"match": {
+			"referringService": "linkedin"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on LinkedIn",
+			"verb": "share",
+			"service": "linkedin"
+		}
+	},
+	{
+		"name": "baidu",
+		"match": {
+			"referringService": "baidu"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Baidu",
+			"verb": "share",
+			"service": "baidu"
+		}
+	},
+	{
+		"name": "qzone",
+		"match": {
+			"referringService": "qzone"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Qzone",
+			"verb": "share",
+			"service": "qzone"
+		}
+	},
+	{
+		"name": "blogger",
+		"match": {
+			"referringService": "blogger"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Blogger",
+			"verb": "share",
+			"service": "blogger"
+		}
+	},
+	{
+		"name": "digg",
+		"match": {
+			"referringService": "digg"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Digg",
+			"verb": "share",
+			"service": "digg"
+		}
+	},
+	{
+		"name": "google_plusone_share",
+		"match": {
+			"referringService": "google_plusone_share"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Google+ Share",
+			"verb": "share",
+			"service": "google_plusone_share"
+		}
+	},
+	{
+		"name": "email",
+		"match": {
+			"referringService": "email"
+		},
+		"message": "If you enjoy this page, do us a favor:",
+		"action": {
+			"type": "button",
+			"text": "Post on Email",
+			"verb": "share",
+			"service": "email"
+		}
+	}
+]});
+</script>
+<!-- AddThis Welcome END -->
+
+</body>
+</html>
