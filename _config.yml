@@ -1,30 +1,25 @@
-title:            "Hao's Thought Works"
-tagline:          Data driving world
-description:      ""
+title:            "Israelmgo"
+tagline:          terminal wars
+description:      "ssss"
 logo:             site-logo.jpg
-disqus_shortname: haoch
+disqus_shortname: israelmgogithubio
 # Comment out url when working locally to resolve base urls correctly
-url:              http://haoch.me
+url:              http://israelmgo.github.io
 # url:              http://localhost:4000
 
 # Owner/author information
 owner:
-  name:           Hao
+  name:           Israelmgo
   avatar:         bio-photo-200x200.png
   bio:            "Java & Python programmer with big data"
-  email:          cn.haochen@gmail.com
-  twitter:        hchen7
-  facebook:       haochencn
-  github:         haoch
-  linkedin:       ihaochen
+  email:          israelmgo@gmail.com
+  twitter:        israelmgo
+  github:         israelmgo
   instagram:      haochen90
-  weibo:          haochencn
-  wechat:
-    qrcode:       weixin_qrcode_12cm.jpg
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    "https://plus.google.com/103688232748743092549"
+  google_plus:    "https://plus.google.com/+IsraelMontero"
 
-google_analytics: UA-40551822-2
+google_analytics: 
 google_verify:
 bing_verify:
 alexa_verify:
@@ -38,13 +33,13 @@ permalink:   /:categories/:title.html
 
 # Internal pages/posts to include in top navigation
 navigation:
-  - title: About
+  - title: Acerca
     url: /about.html
-  - title: Articles
+  - title: Posts
     url: /articles
-  - title: Tags
+  - title: Etiquetas
     url: /tags
-  - title: Links
+  - title: Enlaces
     url: /links
 
 # Related Links displayed in links page
@@ -52,16 +47,6 @@ links:
   - title: Big Data is Something
     desc: Data Warehouse,Teradata, SQL, ETL, Abinitio，Hadoop, Java and 管理
     url: http://hi.baidu.com/wzcyc
-  - title: 北落师门
-    desc: 数据工程师曹鲁
-    url: http://www.lucao.com.cn
-    rss: http://www.lucao.com.cn/feed/
-  - title: 我自然
-    desc: 颜开的博客
-    url: http://yankay.com
-  - title: 秋实
-    desc: 写代码是生存，摄影是生活
-    url: http://chenqiushi.com/
 
 projects:
   - title: Jekyll Blur
