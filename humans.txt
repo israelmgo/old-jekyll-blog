@@ -1,19 +1,19 @@
-Hao's Personal site
+Israelmgo blog personal
 ===================
 
-/* haoch.me */
+/* israelmgo.github.io */
 
 /* ABOUT */
 
-   Author:      Chen, Hao
-   Since:       Sep 22nd, 2013
-   Twitter:     @hchen7
-   Github:      @haoch
-   Location:    Shanghai, P.R.C
+   Author:      Israel 
+   Since:       2014
+   Twitter:     @israelmgo
+   Github:      @israelmgo
+   Location:    Spain
 
 /* SITE */
-   URL:         http://haoch.me
-   Language:    Chinese, English
+   URL:         http://israelmgo.github.io
+   Language:    Spanish
    Built with:  Jekyll <http://jekyllrb.com>
                 LESS
                 jQuery
