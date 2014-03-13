@@ -5,7 +5,7 @@ headline: Acerca De
 subheadline: Detras de @israelmgo
 modified: 2013-08-29
 description: "Acerca de Israel."
-tags: [@israel]
+tags: [israel]
 ---
 
 <center>
