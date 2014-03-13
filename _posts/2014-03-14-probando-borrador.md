@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "probando borrador"
-date: {}
+date: 2014-03-14 00:32
 categories: jekyll update
 published: true
 ---
