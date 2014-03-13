@@ -3,12 +3,8 @@ layout: post
 title: "Post with Large Feature Image and Text"
 description: "Custom written post descriptions are the way to go... if you're not lazy."
 category: articles
-tags: [sample post, readability]
+tags: [sample, readability]
 modified: 2013-06-30
-image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
 comments: true
 share: true
 ---
