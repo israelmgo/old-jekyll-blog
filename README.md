@@ -29,23 +29,3 @@ Development
 #### Preview
 
     jekyll serve --port [PORT] --safe --watch
-
-Screenshot
-----------
-
-### Home
-![Home](images/screenshot/screenshot-home-1.png)
-![Home](images/screenshot/screenshot-home2.png)
-
-### Page
-![Page](images/screenshot/screenshot-articles.png)
-
-![Page](images/screenshot/screenshout-about.png)
-
-### Post
-![Post](images/screenshot/screenshot-post-1.png)
-
-![Post](images/screenshot/screenshot-post-2.png)
-
-#### Tag
-![Tag](images/screenshot/screenshot-tag.png)
