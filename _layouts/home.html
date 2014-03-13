@@ -83,7 +83,7 @@ nav_logo:true
         {% for post in site.categories.articles limit:20 %}
           <li><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
         {% endfor %}
-          <li style="border-bottom:none;"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"> <a href="articles" class="pull-right entry-more">更多文章&gt;&gt;</a></article></li>
+          <li style="border-bottom:none;"><article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting"> <a href="articles" class="pull-right entry-more">Mas Posts&gt;&gt;</a></article></li>
         </ul>
       </div><!-- /.entry-content -->
       <h1>Projects</h1>
