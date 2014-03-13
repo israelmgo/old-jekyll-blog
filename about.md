@@ -1,15 +1,15 @@
 ---
 layout: page
-title: About Me
-headline: About Me
-subheadline: Behind the Name and Developer
+title: Acerca De
+headline: Acerca De
+subheadline: Detras de @israelmgo
 modified: 2013-08-29
-description: "You've found the about page of Hao Chen&thinsp;&ndash;&thinsp;just another boring, tattooed, time traveling, software developer from Shanghai, China."
-tags: [Hao Chen, java, python,hadoop,big data ]
+description: "Acerca de Israel."
+tags: [@israel]
 ---
 
 <center>
-    <img src="/images/{{site.owner.wechat.qrcode}}" alt="{{site.owner.name}} it's a pleasure."  border="0" itemprop="image" width="100px" height="100px"/>
+    <img src="/images/bio-photo.png" alt="{{site.owner.name}} it's a pleasure."  border="0" itemprop="image" width="100px" height="100px"/>
 </center>
 
 Introduction
@@ -24,24 +24,6 @@ Contact
 -------
 You may know more about or reach at me for further communication through below approaches :
 
-- Write email: [cn.haochen@gmail.com](mailto:cn.haochen@gmail.com)
-- Follow me on Github: [@haoch](https://github.com/haoch)
-- View my latest profile on Linkedin: [@ihaochen](http://linkedin.com/in/ihaochen)
-- Leave message on social networks: Weibo [@Hochn](http://weibo.com/haochencn) and Twitter [@hchen7](http://twitter.com/hchen7)
-
---------
-
-
-简介
-----
-大家好，这是陈浩，一名学术范的开发者，现居于中国大陆上海，供职于eBay中国数据平台部门。
-我的专业生涯始于软件开发，以及Teradata数据仓库，目前专注于Hadoop 大数据平台。
-
-联系方式
---------
-可通过以下途径进一步了解或者联系他:
-
-- 通过电子邮箱: [cn.haochen@gmail.com](mailto:cn.haochen@gmail.com)给他写信
-- 在Github: [@haoch](https://github.com/haoch)找到他的代码
-- 在Linkedin: [@ihaochen](http://linkedin.com/in/ihaochen) 查看他的最新履历
-- 在微博: [@Hochn](http://weibo.com/haochencn)和Twitter: [@hchen7](http://twitter.com/hchen7)给他留言
+- Write email: [israelmgo@gmail.com](mailto:israelmgo@gmail.com)
+- Follow me on Github: [israelmgo](https://github.com/israelmgo)
+- Follow me on twitter: [@israelmgo](https://twitter.com/israelmgo)
