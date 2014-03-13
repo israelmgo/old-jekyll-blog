@@ -1,6 +1,6 @@
 title:            "Israelmgo"
-tagline:          terminal wars
-description:      "ssss"
+tagline:          Entre terminales y logs.
+description:      ""
 logo:             site-logo.jpg
 disqus_shortname: israelmgogithubio
 # Comment out url when working locally to resolve base urls correctly
@@ -15,7 +15,7 @@ owner:
   email:          israelmgo@gmail.com
   twitter:        israelmgo
   github:         israelmgo
-  instagram:      haochen90
+  instagram:      israelmgo
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    "https://plus.google.com/+IsraelMontero"
 
@@ -29,7 +29,7 @@ lsi:         false
 pygments:    true
 markdown:    kramdown
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title.html
+permalink:   /:year/:month/:day/:title.html
 
 # Internal pages/posts to include in top navigation
 navigation:
@@ -53,35 +53,6 @@ projects:
     desc: A Beatiful Responsive Jekyll Theme
     url: https://github.com/haoch/jekyll-blur
     date: December 2013
-  - title: Jekyll Listing
-    desc: A Simple and Clear Jekyll Theme
-    url: https://github.com/haoch/jekyll-lstg
-    date: December 2013
-  - title: Cascading Tester
-    desc: A little more productive test framework for Cascading
-    url: https://github.com/haoch/cascading-tester
-    date: October 2013
-  - title: Gvn
-    desc: A tool for using github repository as maven repository
-    url: https://github.com/haoch/gvn
-    date: October 2013
-  - title: Play2 mongodb RESTful plugin
-    desc: A mongodb RESTful web service plugin for Play2 framework
-    url: https://github.com/haoch/play-restful-mongo
-    date: Augest 2013
-  - title: Multi Agent IPO Financial Model Research
-    desc: Analysis IPO process, define financial model and simulate based on Repast Suite (http://repast.sourceforge.net/).
-    date: February 2011 – Present
-    type: research
-  - title: Multi Agent based Decision Support System for Bankruptcy Contagion
-    desc: Based on Jade and Jadex ( http://jadex-agents.informatik.uni-hamburg.de )
-    url: http://www.sciencedirect.com/science/article/pii/S0957417411016587#!
-    date: March 2010 – March 2012
-    type: research
-  - title: Financial Industrial Chain Bankruptcy Management
-    desc: Implement financial industrial chain model in java, simulate bankruptcy process and find key factors.
-    date: July 2011 - November 2011
-    type: research
 
 maruku:
   use_tex:    false
