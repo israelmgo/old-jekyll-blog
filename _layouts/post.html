@@ -30,6 +30,22 @@ layout: default
 		{{ content }}
 	</div>
 
+  <div class="share">
+            <p class="info prompt">Comparte este Post</p>
+            <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-2x fa-fw fa-facebook-square"></i> <span class="hidden">Facebook</span>
+            </a>
+            <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <i class="fa fa-2x fa-fw fa-google-plus-square"></i> <span class="hidden">Google+</span>
+            </a>
+  </div>
+
 	<div class="clearfix"></div>
 
 	<div id="page-navigation"> 
@@ -37,14 +53,14 @@ layout: default
 		<div class="pull-left"> 
 			{% if page.previous.url %} 
 			<a href="{{page.previous.url}}" title="Previous Post: 
-				{{page.previous.title}}"><i class="icon-double-angle-left"></i> {{page.previous.title}}</a> 
+				{{page.previous.title}}"><i class="fa fa-angle-double-left"></i> {{page.previous.title}}</a> 
 			{% endif %} 
 		</div> 
 
 		<div class="pull-right"> 
 			{% if page.next.url %} 
 			<a href="{{page.next.url}}" title="next Post: 
-				{{page.next.title}}">{{page.next.title}} <i class="icon-double-angle-right"></i></a> 
+				{{page.next.title}}">{{page.next.title}} <i class="fa fa-angle-double-right"></i></a> 
 			{% endif %} 
 		</div> 
 		<div class="clearfix">&nbsp;</div> 

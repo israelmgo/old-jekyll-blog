@@ -57,6 +57,7 @@
 				margin-top: 4em;
 				padding-top: 1.5em;
 				border-top: solid 1px #ccc;
+        text-align: center
 			}
 			.social_icons img {
 				opacity: 0.3;
@@ -73,7 +74,6 @@
 			#post h1 {
 				font-size: 1.6em;
 			}
-
       .meta {
 	          margin-top:-4px;
 	          font-size:14px !important;
@@ -85,6 +85,18 @@
           	margin-left:10px;
             }
 
+       .hidden {
+            text-indent: -9999px;
+            visibility: hidden;
+            display: none;
+            }
+
+       .share {
+            margin-top: 1em;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 1em;
+            text-align: center;
+}
 			blockquote {
 				font: 400 20px/30px "Vollkorn";
 				font-style: italic;
@@ -185,8 +197,16 @@
 				margin-top: 40px;
 			}
 			a {
-				color: #1685b3;
-			}
+			  color: #444;
+        text-decoration: none;
+        }
+      a:focus,
+      a:hover {
+        color: #428BCA;
+        text-decoration: none;
+          transition: color ease 0.7s;
+          -webkit-transition: color ease 0.7s;
+       }
 			#website-content {
 				min-height: 300px;
 				padding-top: 1em;
