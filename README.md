@@ -11,9 +11,7 @@ Esta basado en el de [Fabien Penso](http://blog.penso.info/) cuyo codigo esta di
 
 # Licencia
 
-Licencia CC BY-SA 2014 Israel Montero
+Todo el contenido en los directorios **_posts** y **_drafts** está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional 
+[CC BY-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-Todo el contenido en los directorios **_posts** y **_drafts** esta bajo licencia Creative
-Commons Attribution-NonCommercial-ShareAlike
-[License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
-Todo los demas bajo licencia MIT.
+Todo los demas bajo licencia [MIT.](http://opensource.org/licenses/MIT)
