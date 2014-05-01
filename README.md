@@ -5,7 +5,8 @@ Esta basado en el de [Fabien Penso](http://blog.penso.info/) cuyo codigo esta di
 
 ## Actualizado
 
-[Boostrap 3.1.1](http://getbootstrap.com/) 
+[Boostrap 3.1.1](http://getbootstrap.com/)
+
 [FontAwesome 4.0.3](http://fortawesome.github.io/Font-Awesome/) 
 
 # Licencia
