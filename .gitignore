@@ -1,1 +1,10 @@
+Thumbs.db
+.DS_Store
+
+!.gitkeep
+
+.tm_properties
+
 _site
+
+.sass-cache
