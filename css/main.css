@@ -250,10 +250,17 @@
 			.post-author-card h3 {
 				font-size: 1.2em;
 			}
-			.post-author-card a, .post-author-card a:hover {
+			.post-author-card a {
 				color: #444;
+				font-size: 14px;
 				text-decoration: none;
 		}
+			.post-author-card a:hover {
+        color: #428BCA;
+        text-decoration: none;
+          transition: color ease 0.7s;
+          -webkit-transition: color ease 0.7s;
+       }
 		.video {
 			position: relative;
 			padding-bottom: 56.25%;
