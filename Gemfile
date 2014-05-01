@@ -1,4 +1,5 @@
 source 'https://www.rubygems.org'
+gem 'deadweight'
 gem "jekyll", "~> 1.2.1"
 gem 'directory_watcher', "~> 1.4.1"
 gem 'sequel'
