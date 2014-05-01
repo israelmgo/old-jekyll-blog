@@ -11,6 +11,6 @@ disqus: israelmgogithubio
 
 exclude: [".rvmrc", ".rbenv-version", "README", "Rakefile", "changelog.md", "sass_converter.rb", "Gemfile", "Gemfile.lock", ".tm_properties", "config.rb", "sass", "CNAME", "Procfile","_site"]
 pygments: true
-permalink: /:year/:month/:day/:title/
+permalink: /:year/:month/:title.html/
 timezone: Europe/Madrid
 toplinks: ['about', 'archivo', 'contacto']
