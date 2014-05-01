@@ -2,7 +2,7 @@
 layout: post
 title:  "GoAccess Analiza en tiempo real logs"
 date:   2014-05-01
-categories: linux GoAccess apache nginx
+categories: linux GoAccess
 ---
 
 GoAccess , es una de esas herramientas que te pueden facilitar mucho el trabajo a la hora de analizar el trafico y estado de un servidor web, y lo mejor de todo desde la terminal.
