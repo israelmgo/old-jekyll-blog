@@ -3,6 +3,8 @@
 Este es el codigo de [mi blog](http://israelmgo.github.io).
 Esta basado en el de [Fabien Penso](http://blog.penso.info/) cuyo codigo esta disponoble en [Github](https://github.com/penso/blog.penso.info)
 
+[![Dependency Status](https://gemnasium.com/israelmgo/israelmgo.github.io.svg)](https://gemnasium.com/israelmgo/israelmgo.github.io)
+
 ## Actualizado
 
 [Boostrap 3.1.1](http://getbootstrap.com/)
