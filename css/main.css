@@ -1,9 +1,11 @@
+@import url(//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Open+Sans+Condensed:300|Merriweather:400,300,300italic,400italic,700,700italic|Roboto+Slab:400,300);
+
 			*{ margin: 0; padding: 0; }
 			body {
 				padding-top: 20px;
 				padding-bottom: 40px;
 				color: #444;
-				font: 16px/1.5 "Roboto Slab", 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font: 16px/1.5 "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
 			}
 			.header {
 				font-size: 1.0em;
@@ -71,6 +73,18 @@
 			#post h1 {
 				font-size: 1.6em;
 			}
+
+      .meta {
+	          margin-top:-4px;
+	          font-size:14px !important;
+            }
+      .meta a {
+          	color: #666665;
+            }
+      .fa-comments, .fa-clock-o {
+          	margin-left:10px;
+            }
+
 			blockquote {
 				font: 400 20px/30px "Vollkorn";
 				font-style: italic;
