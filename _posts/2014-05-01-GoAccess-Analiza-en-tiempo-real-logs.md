@@ -6,11 +6,8 @@ categories: linux GoAccess apache nginx
 ---
 
 GoAccess , es una de esas herramientas que te pueden facilitar mucho el trabajo a la hora de analizar el trafico y estado de un servidor web, y lo mejor de todo desde la terminal.
-«./GoAccess»
 
 Esta herramienta esta disponible en las tres ramas de Debian por lo que su instalación es muy simple, con un aptitude o apt-get goaccess podemos disponer de goaccess inmediatamente, también esta disponible para diferentes distribuciones Linux como RedHat, OpenSuse o ArchLinux entre otras, y opcionalmente podemos añadirle soporte para GeoIP o el formato de caracteres Unicode UTF-8.
-
-goaccess
 
 GoAccess nos ofrece algunas características muy interesantes entre las que se encuentran:
 
@@ -34,8 +31,6 @@ La utilización de Goaccess es muy simple como podemos ver un su Man Page y disp
     -e Excluir una IP del HOST.
     -a Habilitar una lista de Users-Agents para el host seleccionado
 
-goaccess visitor
-
 A Continuación os dejo algunos ejemplos de uso muy básicos, pero que con la utilización de pipes y añadiendo mas opciones podemos hacer mucho mas completo.
 
     Genera una salida interactiva de modo texto:
@@ -49,7 +44,5 @@ A Continuación os dejo algunos ejemplos de uso muy básicos, pero que con la ut
     Generar un archivo HTML:
 
         # goaccess -f access.log -a > archivo.html
-
-goaccess html
 
 Para obtener mas información, o descargar esta herramienta para compilarla tu mismo te recomiendo que visites la web del proyecto GoAcces
