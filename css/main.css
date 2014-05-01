@@ -280,10 +280,10 @@
 			-o-border-radius: 450px;
 			-ms-border-radius: 450px;
 			-khtml-border-radius: 450px;
-			-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.25);
-			-moz-box-shadow: 0 2px 3px rgba(0,0,0,.25);
-			box-shadow: 0 2px 3px rgba(0,0,0,.25);
-			border: 2px white solid;
+			-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.1);
+			-moz-box-shadow: 0 2px 3px rgba(0,0,0,.1);
+			box-shadow: 0 2px 3px rgba(0,0,0,.1);
+			border-radius: 50px;
 			width: 95px;
 			height: 95px;
 			margin: auto;
