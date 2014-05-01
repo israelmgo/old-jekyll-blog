@@ -1,10 +1,13 @@
 ---
 layout: default
-description: Aventuras entre servisores y terminales Linux.
+title: Archivo
+description: Archivo del Blog de Israel Montero.
 ---
 
+<h3 class="index_title hidden-sm">{{ page.title }}</h3>
+
 <div itemscope itemtype="http://schema.org/Blog">
-  {% for post in site.posts limit:20%}
+  {% for post in site.posts %}
     {% unless post.next %}
 		<h3 class="date_title">{{ post.date | date: '%Y' }}</h3>
       <ul class="this posts">
@@ -17,22 +20,16 @@ description: Aventuras entre servisores y terminales Linux.
         <ul class="past posts">
       {% endif %}
     {% endunless %}
-
 		<li>
 		<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 		<div class="pull-right post_tags hidden-sm">
 			{{ post.categories | join: ', '}}
 		</div>
-		<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date:"%d %b" }}</time>
+		<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date:"%d %b" }} </time>
 		›
 		<span itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></span>
 		</article>
 		</li>
-
   {% endfor %}
 </ul>
-</div>
-
-<div class="archive_title">
-	<h3><a href="/archivo.html">Archivo</a></h3>
 </div>

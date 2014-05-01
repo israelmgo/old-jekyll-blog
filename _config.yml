@@ -1,3 +1,16 @@
-name: Israelmgo
-markdown: redcarpet
+url: http://blog.penso.info
+markdown: kramdown
+base_url: /
+relative_permalinks: false
+
+title: Israelmgo
+description: "Aventuras entre servidores y terminales Linux."
+
+email: israelmgo@gmail.com
+disqus: israelmgogithubio
+
+exclude: [".rvmrc", ".rbenv-version", "README", "Rakefile", "changelog.md", "sass_converter.rb", "Gemfile", "Gemfile.lock", ".tm_properties", "config.rb", "sass", "CNAME", "Procfile","_site"]
 pygments: true
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Madrid
+toplinks: ['about', 'archivo', 'contacto']
