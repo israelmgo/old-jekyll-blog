@@ -18,20 +18,18 @@ Su instalación es muy sencilla y podemos hacerlo de diversas maneras, pero ante
 * python-jinja2 2.0+
 
 Si por alguna razón no dispones de alguno o de todos los paquetes, ya sabes, con un aptitude o apt-get nombre del paquete podemos instalarlo sin mayor complicación, si ya contamos con estos paquetes podemos descargar e instalar Glances desde http://nicolargo.github.com/glances/ o puedes añadirlo a tus repositorios.
-```
-sudo add-apt-repository ppa:arnaud-hartmann/glances-stable
-sudo apt-get update
-```
-</p>
+*
+	sudo add-apt-repository ppa:arnaud-hartmann/glances-stable
+	sudo apt-get update
+*
 Y si decides descargar el archivo lo puedes instalar de la siguiente forma:
-```
-sudo apt-get update
-sudo apt-get install python-setuptools build-essential python-dev
-tar zxvf glances-last.tgz
-cd nicolargo-glances-*
-sudo python setup.py install
-```
-</p>
+*
+	sudo apt-get update
+	sudo apt-get install python-setuptools build-essential python-dev
+	tar zxvf glances-last.tgz
+	cd nicolargo-glances-*
+	sudo python setup.py install
+*
 Los usuarios de Debian en la rama SID (unstable) pueden instalarlo con un simple “aptitude install glances“
 
 Una vez ejecutado podemos ver las opciones disponibles presionando la tecla “h” que nos mostrara la ayuda y diversas opciones de Glances
