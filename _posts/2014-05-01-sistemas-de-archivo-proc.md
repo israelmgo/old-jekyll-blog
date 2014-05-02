@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ""
-date: {}
+title: "Sistema de archivo /Proc"
+date: 2014-05-01
 categories: linux proc
 published: true
 ---
