@@ -2,7 +2,7 @@
 layout: post
 title: "Glances Monitorizacion de Sistemas"
 date: 2012-09-06
-categories: linux proc
+categories: linux glances
 published: true
 ---
 
