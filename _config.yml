@@ -13,4 +13,4 @@ exclude: [".rvmrc", ".rbenv-version", "README", "Rakefile", "changelog.md", "sas
 pygments: true
 permalink: /:year/:month/:title/
 timezone: Europe/Madrid
-toplinks: ['about', 'archivo', 'contacto']
+toplinks: [about, 'archivo', 'contacto']
