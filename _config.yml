@@ -10,7 +10,7 @@ email: israelmgo@gmail.com
 disqus: israelmgogithubio
 
 exclude: [".rvmrc", ".rbenv-version", "README", "Rakefile", "changelog.md", "sass_converter.rb", "Gemfile", "Gemfile.lock", ".tm_properties", "config.rb", "sass", "CNAME", "Procfile","_site"]
-pygments: true
+highlighter: pygments
 permalink: /:year/:month/:title/
 timezone: Europe/Madrid
 toplinks: ['about', 'archivo', 'contacto']
