@@ -5,7 +5,7 @@
 				padding-top: 20px;
 				padding-bottom: 40px;
 				color: #444;
-				font: 16px/1.5 "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
+				font: 16px/1.5 "Roboto Slab", 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 			.header {
 				font-size: 1.0em;
@@ -176,9 +176,7 @@
 			}
 			.footer {
 				font-family: 'Fjalla One';
-				border-top: solid 1px #ccc;
 				font-size: 0.9em;
-				margin-top: 1em;
 				padding-top: 1em;
 				text-align: center;
 			}
@@ -197,12 +195,12 @@
 				margin-top: 40px;
 			}
 			a {
-			  color: #444;
+			  color:#428BCA;
         text-decoration: none;
         }
       a:focus,
       a:hover {
-        color: #428BCA;
+        color: #0040B0;
         text-decoration: none;
           transition: color ease 0.7s;
           -webkit-transition: color ease 0.7s;
