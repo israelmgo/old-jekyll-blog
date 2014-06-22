@@ -25,7 +25,14 @@
 				color: #444;
 				text-decoration: none;
 			}
-
+			.description {
+				text-align: center;
+				font-size: 18px;
+			}
+			.description a, .description a:hover {
+				color: #444;
+				text-decoration: none;
+			}
 			/* Custom container */
 			.container-narrow {
 				margin: 0 auto;
