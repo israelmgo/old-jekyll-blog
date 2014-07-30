@@ -1,9 +1,0 @@
-Sitemap: http://israelmgo.github.io/sitemap.xml
-
-User-agent: *
-Disallow: /img/
-Disallow: /css/
-Disallow: /font/
-Disallow: /js/
-Disallow: /less/
-Disallow: /sass/
