@@ -1,0 +1,20 @@
+# Site settings
+name: Israel Montero
+my_name: Israel Montero
+title: Israel Montero
+email: israelmgo@gmail.com
+description: "Entre servidores y terminales Gnu Linux, Camino del lado oscuro."
+baseurl: ""
+url: "http://israelmgo.github.io"
+blog_image_url: "/images/blog/"
+
+me_image: "/images/israelmgo.jpg"
+about_me_image: "/images/the-server.jpg"
+full_me_image: "/images/israelmgo.jpg"
+
+
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+source: src
