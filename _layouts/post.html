@@ -17,7 +17,12 @@ layout: base
                         <span class="post-meta">
                             <time datetime="{{ page.date | date: "%F" "}}">{{ page.date | date: "%A, %B %-d, %Y"}}</time>
                             <br />
-                            <span class="post-word-count">{{ page.content | number_of_words }} words, or {{ page.content | reading_time }}</span>
+                            {% capture words %}
+														{{ page.content | number_of_words | minus: 250 }}
+														{% endcapture %}
+														{% unless words contains "-" %}
+														{{ words | plus: 250 | divided_by: 180 | append: " min. de lectura" }}
+														{% endunless %}
                         </span>
                     </div>
                     <a href="#topofpage" class="topofpage"><i class="fa fa-angle-double-down"></i></a>
