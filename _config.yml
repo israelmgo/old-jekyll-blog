@@ -17,4 +17,3 @@ full_me_image: "/images/israelmgo.jpg"
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
-source: src
