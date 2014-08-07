@@ -1,7 +1,7 @@
 # Blog
 
 Este es el codigo de [mi blog](http://israelmgo.github.io) construido con [jekyll](http://jekyllrb.com/).
-Esta basado en el de [Chris Becker](http://becker.am/) cuyo codigo esta disponoble en [Github](https://github.com/Cbeck527/becker.am)
+Esta basado en el de [Chris Becker](http://becker.am/) cuyo codigo esta disponible en [Github](https://github.com/Cbeck527/becker.am)
 
 # Licencia
 
