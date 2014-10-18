@@ -4,14 +4,14 @@ title: "About Me"
 header_image: "/images/the-server.jpg"
 ---
 
-![Lego Space Gnu Linux](/assets/images/about.jpg)
+![Lego Space Gnu Linux](/images/about.jpg)
 
 Hola! soy Israel Montero, y Administro sistemas bajo GNU\Linux, por lo que 
 la mayor parte del día ando entre servidores y terminales.
 
 <figure style="width: 30%; float: right; margin: 10px 0px 0px 20px;">
-	<a href="/assets/images/tux.png">
-        <img src="/assets/images/tux.png" alt="Linux">
+	<a href="/images/tux.png">
+        <img src="/images/tux.png" alt="Linux">
     </a>
 </figure>
 
@@ -22,8 +22,8 @@ negocios o puestos de trabajo para sus empleados.
 Intentando siempre utilizar Gnu\Linux y software libre.
 
 <figure style="width: 30%; float: left; margin: 0px 20px 0px 0px;">
-	<a href="/assets/images/debian.png">
-        <img src="/assets/images/debian.png" alt="debian">
+	<a href="/images/debian.png">
+        <img src="/images/debian.png" alt="debian">
     </a>
 </figure>
 
@@ -34,8 +34,8 @@ del proyecto y el tipo de equipo utilizo una u otra, pero para puestos de trabaj
 o escritorio utilizo Fedora y openSUSE
 
 <figure style="width: 30%; float: right; margin: 0px 0px 0px 20px;">
-	<a href="/assets/images/root.png">
-        <img src="/assets/images/root.png" alt="root">
+	<a href="/images/root.png">
+        <img src="/images/root.png" alt="root">
     </a>
 </figure>
 
