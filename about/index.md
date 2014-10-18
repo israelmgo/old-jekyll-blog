@@ -4,8 +4,6 @@ title: "About Me"
 header_image: "/images/the-server.jpg"
 ---
 
-![Lego Space Gnu Linux](/images/about.jpg)
-
 Hola! soy Israel Montero, y Administro sistemas bajo GNU\Linux, por lo que 
 la mayor parte del día ando entre servidores y terminales.
 
