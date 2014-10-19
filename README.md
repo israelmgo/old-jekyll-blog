@@ -1,4 +1,4 @@
-# broken.build
+# Israelmgo
 
 Este es el codigo de [mi blog](http://israelmgo.github.io) construido con [jekyll](http://jekyllrb.com/).
 Este tema esta basado en el de [Radek Pazdera](http://broken.build/) y esta modificado para mi uso.
