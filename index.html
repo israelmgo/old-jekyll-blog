@@ -7,8 +7,6 @@ about: 'about.html'
 {% if page.cover %}
 <header id="cover" class="post-head"
         style="background-image: url(/assets/images/covers/{{ page.cover }})">
-{% endif %}
-<header class="site-head">
     <div class="vertical">
         <div class="site-head-content" class="inner">
                 {% if site.logo %}
@@ -30,6 +28,7 @@ about: 'about.html'
         </div>
     </div>
 </header>
+{% endif %}
 
 <main class="content" role="main">
 
