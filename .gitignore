@@ -1,3 +1,4 @@
 _site
-.sass-cache
-hosts.inventory
+.DS_Store
+*.swp
+*.swo

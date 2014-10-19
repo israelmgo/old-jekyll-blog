@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "Glances Monitorizacion de Sistemas"
-date: 2012-09-06
-header_image: "/images/headers/2012-09-06-Glances-Monitorizacion-de-Sistemas.png"
-categories: linux glances
-published: true
+description: Simple y elegante
+cover: 2012-09-06-Glances-Monitorizacion-de-Sistemas.png
+comments: true
+categories:
+- linux
+tags:
+- glances
 ---
-
 Glances es un herramienta para la motorización de sistemas desde tu terminal, esta escrita en python y utiliza la librería PsUtil, su creador es Nicolas Hennion y para mi gusto ha conseguido una herramienta muy limpia.
 
 Su instalación es muy sencilla y podemos hacerlo de diversas maneras, pero antes debemos tener instalado en nuestro sistema lo siguiente:

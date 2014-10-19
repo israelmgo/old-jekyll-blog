@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "Sistema de archivo /Proc"
-date: 2013-07-28
-header_image: "/images/headers/2013-08-27-sistemas-de-archivo-proc.jpg"
-categories: linux proc
-published: true
+description: Conociendo en sistema de archivos
+cover: 2013-08-27-sistemas-de-archivo-proc.jpg
+comments: true
+categories:
+- linux
+tags:
+- proc
 ---
-
 Esta es una serie de posts que iré escribiendo sobre el temario para obtener la certificación del Instituto profesional del Linux (LPIC), basados en los objetivos descritos en su web, y que creo son los los mas adecuados para centrarse en obtener dicha certificación, no quiero ni espero que esto se tome como una guía, son mis notas lo que se y he aprendido, lo que he leído en libros, blogs, foros o cualquier otro lado o formato, y especialmente la documentación oficial y wikis de diversas distribuciones linux como Debian, RedHat, ArchLinux, etc…
 
 En muchas ocasiones daré por echo que ya se tienen ciertos conocimientos sobre sistemas Linux arquitecturas de sistemas, o que creo ya se tienen que conocer, aunque si alguien tiene alguna duda solo tiene que preguntar y yo intentare indicarle o explicarle de le mejor manera que pueda como despejar esa duda.

@@ -1,8 +1,69 @@
 ---
-layout: base
-is_home: 'true'
-has_no_footer: 'true'
-title: "Israel Montero"
+layout: default
+title: Home
+cover: /assets/images/covers/underground.jpg
+about: 'about.html'
 ---
 
-{% include header.html %}
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content" class="inner">
+                {% if site.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+                {% endif %}
+                <h1 class="blog-title">{{ site.name}}</h1>
+            <div class="inner">
+            <section class="icons">
+                <a class="icon-mail" href="mailto:{{ site.email }}"></a>
+                <a class="icon-twitter" href="https://twitter.com/{{ site.twitter }}"></a>
+                <a class="icon-github" href="https://github.com/{{ site.github }}"></a>
+                <a class="fa fa-google-plus" href="https://plus.google.com/{{ site.gplus }}?rel=author"></a>
+                <a class="fa fa-user" href='{{site.baseurl}}{{ page.about }}'></a>
+                <a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
+            </section>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+
+    {% for post in paginator.posts %}
+
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta"><time datetime="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time> {{!tags prefix="on "}}</span>
+            <h2 class="post-title"><a href="{{ post.url}}">{{ post.title }}</a></h2>
+
+        </header>
+        <section class="post-excerpt">
+            {{post.excerpt | strip_html }}
+        </section>
+    </article>
+
+    {% endfor %}
+
+    <nav class="pagination" role="pagination">
+
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+          <a class="newer-posts" href="/" title="Previous Page">&laquo; Newer Posts</a>
+          {% else %}
+          <a class="newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
+          {% endif %}
+        {% endif %}
+
+        <span class="page-number">
+          Page {{paginator.page}} of {{paginator.total_pages}}
+        </span>
+
+        {% if paginator.next_page %} 
+        <a class="older-posts" href="/page{{ paginator.next_page }}/"
+           title="Next Page">
+          Older Posts &raquo;
+        </a>
+        {% endif %}
+    </nav>
+</main>

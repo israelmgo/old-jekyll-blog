@@ -1,19 +1,24 @@
-# Site settings
-name: Israel Montero
-my_name: Israel Montero
-title: Israel Montero
-email: israelmgo@gmail.com
-description: "Entre servidores y terminales Gnu Linux, Camino del lado oscuro."
-baseurl: ""
-url: "http://www.israelmgo.es"
-blog_image_url: "/images/blog/"
+name: 'Shell.Punk'
+title: israelmgo.es
+description: "Entre Servidores y Terminales."
 
-me_image: "/images/israelmgo.jpg"
-about_me_image: "/images/the-server.jpg"
-full_me_image: "/images/israelmgo.jpg"
-
-
-
-# Build settings
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+highligher: true
+paginate: 15
+timezone: Europe/Madrid
+future:   true
+
+# Details for the RSS feed generator
+url:            'http://www.israelmgo.es'
+author:         'Israel Montero'
+
+email:          'israelmgo@gmail.com'
+twitter:        'israelmgo'
+github:         'israelmgo'
+linkedin:       ''
+gplus:          '+IsraelMontero'
+
+disqus_shortname: israelmgogithubio
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:year/:month/:day/:title/
