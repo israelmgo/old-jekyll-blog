@@ -7,24 +7,35 @@ about: 'about.html'
 {% if page.cover %}
 <header id="cover" class="site-head"
         style="background-image: url(/assets/images/covers/{{ page.cover }})">
-    <div class="vertical">
+   <div class="vertical">
         <div class="site-head-content" class="inner">
+            <div class="bubble">
+                {% if site.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+                {% endif %}
                 <h1 class="blog-title">{{ site.name}}</h1>
-            <div class="inner">
-            <section class="icons">
-                <a class="icon-mail" href="mailto:{{ site.email }}"></a>
-                <a class="icon-twitter" href="https://twitter.com/{{ site.twitter }}"></a>
-                <a class="icon-github" href="https://github.com/{{ site.github }}"></a>
-                <a class="fa fa-google-plus" href="https://plus.google.com/{{ site.gplus }}?rel=author"></a>
-                <a class="fa fa-user" href='{{site.baseurl}}{{ page.about }}'></a>
-                <a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
-            </section>
-            <h4 class="page-description">
-                {% if site.description %} {{ site.description }} {% endif %}
-            </h4>
+			      <div class="inner">
+            		<section class="icons">
+               			<a class="icon-mail" href="mailto:{{ site.email }}"></a>
+                		<a class="icon-twitter" href="https://twitter.com/{{ site.twitter }}"></a>
+                		<a class="icon-github" href="https://github.com/{{ site.github }}"></a>
+                		<a class="fa fa-google-plus" href="https://plus.google.com/{{ site.gplus }}?rel=author"></a>
+                		<a class="fa fa-user" href='{{site.baseurl}}{{ page.about }}'></a>
+                		<a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
+            		</section>
+                  </div>
+                <h2 class="blog-description">
+                    by
+                    {% if page.about %} <a href='{{site.baseurl}}{{ page.about }}'>{% endif %}
+                    {{ site.author }}
+                    {% if page.about %} </a>{% endif %}
+                </h2>
             </div>
-        </div>
-    </div>
+            <div class="bubble-source"></div>
+       </div>
+</div>
 </header>
 {% endif %}
 
