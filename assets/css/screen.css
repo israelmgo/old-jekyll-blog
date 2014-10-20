@@ -408,7 +408,7 @@ margin on the iframe, cause it breaks stuff. */
     position: relative;
     width: 80%;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 /* Centres vertically yo. (IE8+) */
@@ -436,9 +436,9 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .site-head-content .bubble {
-    width: 33rem;
+    width: 40rem;
     border-radius: 1.1em;
-    background: #fff;
+    background: #F0FF63;
     padding: 20px;
     margin: auto;
     margin-top: 20px;
@@ -450,7 +450,7 @@ margin on the iframe, cause it breaks stuff. */
     width: 0;
     height: 0;
     border-bottom: 60px solid transparent;
-    border-left: 45px solid #fff;
+    border-left: 45px solid #F0FF63;
 }
 
 .post-head {
