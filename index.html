@@ -4,10 +4,12 @@ title: Home
 cover: 109H_mini.jpg
 about: 'about.html'
 ---
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+{% if page.cover %}
+<header id="cover" class="post-head"
+        style="background-image: url(/assets/images/covers/{{ page.cover }})">
     <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
+        <div class="site-head-content" class="inner">
+                <h1 class="blog-title">{{ site.name}}</h1>
             <div class="inner">
             <section class="icons">
                 <a class="icon-mail" href="mailto:{{ site.email }}"></a>
@@ -17,15 +19,15 @@ about: 'about.html'
                 <a class="fa fa-user" href='{{site.baseurl}}{{ page.about }}'></a>
                 <a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
             </section>
-            </div>
             <h2 class="page-description">
                 {% if site.description %} {{ site.description }}. {% endif %}
                 {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
             </h2>
+            </div>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
+{% endif %}
 
 <main class="content" role="main">
 
