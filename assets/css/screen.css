@@ -100,7 +100,7 @@
     transition: color 0.3s ease;
     padding: 0 10px 0 10px;
     margin: 0 5px 0 5px;
-    color: #3A4145;
+    color: #26292C;
 }
 
 
@@ -429,7 +429,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 60%;
     margin-bottom: 5rem;
     text-align: center;
-    color: #50585D;
+    color: #26292C;
     background: #F0E12C; no-repeat center center;
     background-size: cover;
     border-bottom: #EBF2F6 4px solid;
