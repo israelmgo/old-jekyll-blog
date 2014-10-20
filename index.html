@@ -9,15 +9,18 @@ about: 'about.html'
         style="background-image: url(/assets/images/covers/{{ page.cover }})">
    <div class="vertical">
         <div class="site-head-content" class="inner">
-            <div>
+            <div class="bubble">
                 {% if site.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
                 {% endif %}
                 <h1 class="blog-title">{{ site.name}}</h1>
+				 <h2 class="blog-description">
+                    {{ site.description }}
+                </h2>
 			      <div class="inner">
-            		<section class="icons">
+            		<section class="icon">
                			<a class="icon-mail" href="mailto:{{ site.email }}"></a>
                 		<a class="icon-twitter" href="https://twitter.com/{{ site.twitter }}"></a>
                 		<a class="icon-github" href="https://github.com/{{ site.github }}"></a>
@@ -26,10 +29,8 @@ about: 'about.html'
                 		<a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
             		</section>
                   </div>
-                <h2 class="blog-description">
-                    {{ site.description }}
-                </h2>
             </div>
+            <div class="bubble-source"></div>
        </div>
 </div>
 </header>
