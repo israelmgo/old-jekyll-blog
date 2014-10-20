@@ -9,7 +9,7 @@ about: 'about.html'
         style="background-image: url(/assets/images/covers/{{ page.cover }})">
    <div class="vertical">
         <div class="site-head-content" class="inner">
-            <div class="bubble">
+            <div>
                 {% if site.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
@@ -27,13 +27,9 @@ about: 'about.html'
             		</section>
                   </div>
                 <h2 class="blog-description">
-                    by
-                    {% if page.about %} <a href='{{site.baseurl}}{{ page.about }}'>{% endif %}
-                    {{ site.author }}
-                    {% if page.about %} </a>{% endif %}
+                    {{ site.description }}
                 </h2>
             </div>
-            <div class="bubble-source"></div>
        </div>
 </div>
 </header>
