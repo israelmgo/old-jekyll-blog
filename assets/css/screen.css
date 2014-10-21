@@ -956,6 +956,30 @@ margin on the iframe, cause it breaks stuff. */
     opacity: 1;
     top: -33px;
 }
+
+/* Button back home */
+.myButton {
+	background-color:#efff63;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:1px solid #efff63;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:16px 31px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#e9ff24;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 /* ==========================================================================
    9. Media Queries - Smaller than 900px
    ========================================================================== */
