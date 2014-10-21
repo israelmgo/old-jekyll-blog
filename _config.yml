@@ -1,6 +1,7 @@
 name: 'Israelmgo'
 title: israelmgo.es
 description: "Entre Servidores y Terminales."
+logo: me.jpg
 
 markdown: kramdown
 highligher: true

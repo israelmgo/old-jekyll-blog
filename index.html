@@ -10,11 +10,6 @@ about: 'about.html'
    <div class="vertical">
         <div class="site-head-content" class="inner">
             <div class="bubble">
-                {% if site.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-                {% endif %}
                 <h1 class="blog-title">{{ site.name}}</h1>
 				 <h2 class="blog-description">
                     {{ site.description }}
@@ -31,6 +26,11 @@ about: 'about.html'
                   </div>
             </div>
             <div class="bubble-source"></div>
+            {% if site.logo %}
+              <a class="blog-logo" href="{{ site.baseurl }}">
+                <img src="{{ site.logo }}" alt="Blog Logo" />
+              </a>
+            {% endif %}
        </div>
 </div>
 </header>
