@@ -52,8 +52,8 @@ post_class: post-template
         <section class="post-content">
             {{content}}
         </section>
+        	<a  class="fa fa-tag"></a>
 		<span class="post-tags">
-		<a  class="fa fa-tag"></a>
         	{% for tag in page.tags %}
         	<a href="/tags/#{{ tag }}">{{ tag }}</a>
         	<span class="seperator"> </span>
