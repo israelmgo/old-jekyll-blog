@@ -16,8 +16,8 @@ paginate: 15
 timezone: Europe/Madrid
 future:   true
 baseurl: '/'
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://www.israelmgo.es'
 
 # Details for the RSS feed generator
-url:            'http://localhost:4000'
+url:            'http://www.israelmgo.es'
 author:         'Israel Montero'
