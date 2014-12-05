@@ -1,25 +1,23 @@
-name: 'Israelmgo'
-title: israelmgo.es
-description: "Entre Servidores y Terminales."
-logo:
+name: Israel Montero
+description: Entre servidores y terminales Linux, camino del lado oscuro
+meta_description: "linux, servers, sysadmin, bofh, debian, centos, suse, opensuse, redhat, fedora, ubuntu"
 
-markdown: kramdown
-highligher: true
-paginate: 15
-timezone: Europe/Madrid
-future:   true
-
-# Details for the RSS feed generator
-url:            'http://www.israelmgo.es'
-author:         'Israel Montero'
-
+#Social
 email:          'israelmgo@gmail.com'
 twitter:        'israelmgo'
 github:         'israelmgo'
-linkedin:       ''
+linkedin:       'israelmgo'
 gplus:          '+IsraelMontero'
 
-disqus_shortname: israelmgogithubio
+markdown: kramdown
+highlighter: true
+logo: false
+paginate: 15
+timezone: Europe/Madrid
+future:   true
+baseurl: '/'
+domain_name: 'http://yourblog-domain.com'
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:year/:month/:day/:title/
+# Details for the RSS feed generator
+url:            'http://localhost:4000'
+author:         'Israel Montero'

@@ -4,52 +4,54 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>{{ site.title }}</title>
+    <title>{{ site.name }} - {{ site.description }}</title>
     <meta name="description" content="{{ site.meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" href="/assets/images/icon.png">
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- This is for syntax highlight -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
+	<link rel="icon" type="image/png" href="/assets/images/icon.png">    
+	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:700,400" />
+	<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
-    <link rel="alternate" type="application/rss+xml" title="Shell Punk"
-          href="/rss.xml">
+
 </head>
-<body class="home-template">
+<body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
     {{ content }}
-
-    <footer class="site-footer">
-        <div class="inner">
-            <section class="icons">
-                <a class="fa fa-home fa-3" href="/"></a>
-            </section>
-            <section class="icons">
-                <a class="icon-mail" href="mailto:{{ site.email }}"></a>
-                <a class="icon-twitter" href="https://twitter.com/{{ site.twitter }}"></a>
-                <a class="icon-github" href="https://github.com/{{ site.github }}"></a>
-                <a class="icon-googleplus" href="https://plus.google.com/{{ site.gplus }}?rel=author"></a>
-                <a class="fa fa-rss" href="{{site.baseurl}}/rss.xml"></a>
-            </section>
-            <section class="poweredby">Made with Jekyll, based on the <a href="http://github.com/rosario/kasper">Kasper theme</a>.</section>
-            <section class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-        </div>
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; 
+              {{date format="YYYY"}} &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using 
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
     </footer>
-
-
-    <script type="text/javascript" src="/assets/js/jquery-1.10.2.min.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.parallax-1.1.3.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.localscroll-1.2.7-min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery-scrollto.js"></script>
     <script type="text/javascript" src="/assets/js/index.js"></script>
 
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
 </body>
 </html>

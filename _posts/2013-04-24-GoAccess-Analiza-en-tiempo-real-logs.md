@@ -1,15 +1,12 @@
 ---
 layout: post
-title: "GoAccess Analiza en tiempo real logs"
-description: Revisando logs
-cover: 2013-04-24-GoAccess-Analiza-en-tiempo-real-logs.png
-comments: true
-categories:
-- linux
-tags:
-- goaccess
+title:  "GoAccess Analiza en tiempo real logs"
+date:   2013-04-24
+tags: linux GoAccess
+description: analiza el trafico y estado de tu servidor web
 ---
-GoAccess , es una de esas herramientas que te pueden facilitar mucho el trabajo a la hora de analizar el trafico y estado de un servidor web, y lo mejor de todo desde la terminal.
+
+GoAccess es una de esas herramientas que te pueden facilitar mucho el trabajo a la hora de analizar el trafico y estado de un servidor web, y lo mejor de todo desde la terminal.
 
 Esta herramienta esta disponible en las tres ramas de Debian por lo que su instalación es muy simple, con un aptitude o apt-get goaccess podemos disponer de goaccess inmediatamente, también esta disponible para diferentes distribuciones Linux como RedHat, OpenSuse o ArchLinux entre otras, y opcionalmente podemos añadirle soporte para GeoIP o el formato de caracteres Unicode UTF-8.
 
@@ -49,4 +46,4 @@ A Continuación os dejo algunos ejemplos de uso muy básicos, pero que con la ut
 
         # goaccess -f access.log -a > archivo.html
 
-Para obtener mas información, o descargar esta herramienta para compilarla tu mismo te recomiendo que visites la web del proyecto GoAcces
+Para obtener mas información o descargar esta herramienta para compilarla tu mismo te recomiendo que visites la web del proyecto GoAccess

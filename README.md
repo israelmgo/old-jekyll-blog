@@ -1,12 +1,38 @@
-# Israelmgo
+# Kasper
 
-Este es el codigo de [mi blog](http://israelmgo.github.io) construido con [jekyll](http://jekyllrb.com/).
-Este tema esta basado en el de [Radek Pazdera](http://broken.build/) y esta modificado para mi uso.
-El codigo esta disponible en [Github](https://github.com/pazdera/pazdera.github.io)
+This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll. 
+Feel free to fork, change, modify and re-use it.
 
-Todo el contenido en los directorios **_posts** y **_drafts** está bajo una licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional 
-[CC BY-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+## How to use it
 
-Todo los demas bajo licencia [MIT.](http://opensource.org/licenses/MIT).
+Simply clone this repository, and then run `jekyll serve` inside the directory.
 
-El tema original Kasper Jekyll lo puedes encontrar [aqui](https://github.com/rosario/kasper).
+Kasper theme includes:
+
+* Pagination
+* Rss
+* Google Analytics Tracking code
+* Code Syntax Highlight
+* Author's profile with picture
+* Disqus comments
+
+## Screenshots
+
+![index page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-index.png)
+![post page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-post.png)
+
+
+## Thanks 
+Most of the work has been already done by the Ghost team, I've just ported Casper to Jekyll. 
+I've also added few things specific to Jekyll and some minor style changes.
+
+## Copyright & License
+
+Copyright (C) 2013 Ghost Foundation - Released under the MIT License.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

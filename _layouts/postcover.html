@@ -5,25 +5,29 @@ archive: true
 post_class: post-template
 ---
 
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
     <nav class="main-nav {% if page.cover %} overlay {% endif %} clearfix">
         <a class="blog-logo" href="{{ site.baseurl }}"><img src="/assets/images/icon.png" alt="Blog Logo" /></a>
 		<a class="blog-logo-about" href="{{ site.baseurl }}about.html"><img src="/assets/images/avatar.jpeg" alt="author Picture" /></a>
-		<time class="no-cover-blog-logo-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ site.author }} {{ page.date | date_to_string }}</time>	        
+		<time class="blog-logo-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ site.author }} {{ page.date | date_to_string }}</time>	        
 		<a class="archive-button" href="{{ site.baseurl }}archivo/">Archivo</a>
 		<a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Suscribete</a>
     </nav>
+	<div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <h4 class="post-description">{{ page.description }}</h4>
+        </div>
+    </div>
+	<a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
-<main class="content" role="main">
+<main id="content" class="content" role="main">
 
     <article class="post">
 
-        <div class="no-cover-post-header">
-            <h1 class="no-cover-post-title">{{ page.title }}</h1>
-            <section class="no-cover-post-meta">                
-        
-            </section>
+        <div class="post-header">
+
         </div>
 
 <!--         <header class="post-header">
@@ -54,7 +58,6 @@ post_class: post-template
         	<span class="seperator"> </span>
         	{% endfor %}
         </span>
-
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
