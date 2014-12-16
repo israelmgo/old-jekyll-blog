@@ -55,7 +55,7 @@ post_class: post-template
         	<a  class="fa fa-tag"></a>
 		<span class="post-tags">
         	{% for tag in page.tags %}
-        	<a href="/tags/#{{ tag }}">{{ tag }}</a>
+        	<a class="fa fa-tag" href="/tags/#{{ tag }}">{{ tag }}</a>
         	<span class="seperator"> </span>
         	{% endfor %}
         </span>
