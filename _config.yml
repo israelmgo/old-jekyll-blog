@@ -10,7 +10,7 @@ linkedin:       'israelmgo'
 gplus:          '+IsraelMontero'
 
 markdown: kramdown
-highlighter: true
+highlighter: pygments
 logo: false
 paginate: 15
 timezone: Europe/Madrid
